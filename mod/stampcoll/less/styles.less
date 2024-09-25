@@ -1,0 +1,65 @@
+@import "../../../theme/bootstrapbase/less/bootstrap/variables.less";
+@import "../../../theme/bootstrapbase/less/bootstrap/mixins.less";
+
+#page-mod-stampcoll-view {
+
+    .box.collection {
+        padding: 1em;
+        border: 1px solid #ddd;
+    }
+
+    table.collection.multiuser {
+        margin: 1em auto;
+        th img.sort {
+            margin-left: 5px;
+        }
+        .picture {
+            width: 35px;
+        }
+        .stamps {
+            width: 60%;
+        }
+    }
+
+    .stamp-wrapper {
+        display: inline-block;
+        text-align: center;
+        font-size: small;
+        vertical-align: top;
+
+        .stamp-text {
+            display: none;
+        }
+    }
+
+    .stamp-wrapper.viewmode-full {
+        border: 1px solid #ddd;
+        .border-radius(4px);
+        padding: 5px;
+        margin: 2px;
+
+        .stamp-text {
+            display: block;
+        }
+    }
+}
+
+#page-mod-stampcoll-managestamps {
+    table.collection.management {
+        margin: 1em auto;
+        th img.sort {
+            margin-left: 5px;
+        }
+        .holderinfo  {
+            width: 35px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 80%;
+        }
+    }
+    .submitwrapper {
+        margin: 5px auto 20px;
+    }
+}

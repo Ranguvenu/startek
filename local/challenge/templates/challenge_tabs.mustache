@@ -1,0 +1,83 @@
+{{!
+    This file is part of eAbyas
+    Copyright eAbyas Info Solutons Pvt Ltd, India
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 3 of the License, or
+    (at your option) any later version.
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+    @author eabyas  <info@eabyas.in>.
+}}
+<div id="challenge_page_container pull-left">
+    <div id="challenge_tabs">
+        <ul class="nav nav-tabs mb-10">
+            <li class="challenge_tab_element active nav-item" data-type="challenger_tab_content">
+                <span class="nav-link active">{{#str}} my_challengers, local_challenge {{/ str}}</span>
+            </li>
+            <li class="challenge_tab_element nav-item" data-type="challengee_tab_content">
+                <span class="nav-link">{{#str}} my_challengees, local_challenge {{/ str}}</span>
+            </li>
+        </ul>
+        <span class="search_container">
+            <label class="search_label">{{#str}}search{{/str}} : </label>
+            <input type="text" name="global_search" id="global_search_challenge" />
+        </span>
+        <div id="challenger_tab_content" class="tab_content">
+        </div>
+        <div id="challengee_tab_content" class="tab_content">
+        </div>
+    </div>
+</div>
+{{# js}}
+    require(['local_costcenter/cardPaginate', 'jquery', 'jqueryui'], function(cardPaginate, $){
+
+        var targetid = {{{options}}}.targetID;
+        var content = '<div data-region="'+targetid+'-count-container"></div><div data-region="'+targetid+'-list-container" id ="'+targetid+'id"></div><span class="overlay-icon-container cardpaginate-loader {{$hiddenclass}}{{^visible}}hidden{{/visible}}{{/hiddenclass}}" data-region="overlay-icon-container"><span class="loading-icon icon-no-margin">{{#pix}} ajax-loader, local_costcenter, {{#str}} loading {{/str}} {{/pix}}</span></span>';
+        $('#challenger_tab_content').html(content);
+        cardPaginate.reload({{{options}}}, {{{dataoptions}}}, {{{filterdata}}});
+        //$('#challenge_tabs').tabs();
+        $(document).on('click', '.challenge_tab_element', function(){
+            if($(this).hasClass('active')){
+                return true;
+            }else{
+                $('.challenge_tab_element').removeClass('active');
+                $('.challenge_tab_element .nav-link').removeClass('active');
+                $(this).addClass('active');
+                $(this).children('.nav-link').addClass('active');
+                $('#global_search_challenge').val('');
+            }
+            $(".tab_content").empty();
+            console.log($(this).data('type'));
+            var filterdata = {{{filterdata}}};
+            var options = {{{options}}};
+            options.targetID = filterdata.data_type = $(this).data('type');
+            targetid = options.targetID;
+            var content = '<div data-region="'+targetid+'-count-container"></div><div data-region="'+targetid+'-list-container" id ="'+targetid+'id"></div><span class="overlay-icon-container cardpaginate-loader {{$hiddenclass}}{{^visible}}hidden{{/visible}}{{/hiddenclass}}" data-region="overlay-icon-container"><span class="loading-icon icon-no-margin">{{#pix}} ajax-loader, local_costcenter, {{#str}} loading {{/str}} {{/pix}}</span></span>';
+            console.log(content);
+            $("#"+targetid).html(content);
+            cardPaginate.reload(options, {{{dataoptions}}}, filterdata);
+        });
+        var timer;
+        $(document).on('keyup', '#global_search_challenge', function(){
+            clearTimeout(timer);
+            var searchval = $(this).val();
+            timer = setTimeout(function(){
+                var active_tab = $('.challenge_tab_element.active');
+                var filterdata = {{{filterdata}}};
+                var options = {{{options}}};
+                options.targetID = filterdata.data_type = active_tab.data('type');
+                filterdata.searchval = searchval;
+                targetid = options.targetID;
+                var content = '<div data-region="'+targetid+'-count-container"></div><div data-region="'+targetid+'-list-container" id ="'+targetid+'id"></div><span class="overlay-icon-container cardpaginate-loader {{$hiddenclass}}{{^visible}}hidden{{/visible}}{{/hiddenclass}}" data-region="overlay-icon-container"><span class="loading-icon icon-no-margin">{{#pix}} ajax-loader, local_costcenter, {{#str}} loading {{/str}} {{/pix}}</span></span>';
+                $("#"+targetid).html(content);
+                cardPaginate.reload(options, {{{dataoptions}}}, filterdata);
+            }, 100);
+        });
+    });
+{{/ js}}

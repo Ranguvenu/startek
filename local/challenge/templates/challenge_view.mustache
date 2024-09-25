@@ -1,0 +1,73 @@
+{{!
+    This file is part of eAbyas
+    Copyright eAbyas Info Solutons Pvt Ltd, India
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 3 of the License, or
+    (at your option) any later version.
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+    @author eabyas  <info@eabyas.in>.
+}}
+{{# response}}
+    {{# viewtypeCard}}
+        <div>
+            {{# records}}
+                <div class="{{cardClass}} challenge_container"><!-- w-full pull-left mb-2 -->
+                    <div class="challenge_module"> 
+                        <!-- <div class="challenge_module_image mx-auto" style="background-image:url('{{modulelogo_url}}');"></div> -->
+                        <div class="challenge_content">
+                            <div class="challenge_hdr">
+                                {{# customimage_required}}
+                                    <span class="{{componenticonclass}} component_icon"></span>
+                                {{/ customimage_required}}
+                                {{^ customimage_required}}
+                                <span class="component_icon">
+                                    <i class="{{componenticonclass}}" aria-hidden="true" aria-label=""></i>
+                                </span>
+                                {{/ customimage_required}}
+                                <span class="chl-lbl req_component_name">{{modulename}}</span>
+                            </div>
+                            <div class="d-flex flex-row flex-wrap w-full mb-2 chl-comb">
+                                <div class="w-full pull-left mb-2 col-md-6 d-flex flex-row flex-wrap justify-content-center text-center chl_raise_date"> 
+                                    <span class="lable_align w-full">{{#str}}challengedate, local_challenge{{/str}}</span> 
+                                    <span class="value_align w-full">{{challenged_date}}</span>  
+                                </div>
+                                <div class="w-full pull-left mb-2 col-md-6 d-flex flex-row flex-wrap justify-content-center text-center chl_raise_date">
+                                    <span class="lable_align w-full">{{#str}}completebydate, local_challenge{{/str}}</span> 
+                                    <span class="value_align w-full">{{challenge_completeby}}</span>
+                                </div>
+                                <div class="w-full mb-2 d-flex flex-row flex-wrap justify-content-center text-center days_count"> 
+                                    <span class="value_align w-full status_rejected status_value">{{challenge_status}}</span>     
+                                </div>
+                            </div>
+
+                            <div class="w-full pull-left mb-2 d-flex flex-row flex-wrap align-items-center chl_user_info">
+                                <span class="user icon w-full">
+                                    <img src="{{challenge_userimg_url}}" alt="Picture of {{challenge_username}}" class="userpic mr-1"> {{challenge_username}}
+                                </span>
+                            </div>
+                            {{{actions}}}
+                           <!--  <div class="w-full pull-left mb-2 d-flex flex-row flex-wrap align-items-center"> 
+                                <span class="pull-left"><span class="lable_align">{{#str}}moodletype, local_challenge{{/str}}</span> <span class="colon_align mr-1 ml-1"> : </span></span> <span class="value_align">{{moduletype}}</span>  
+                            </div> -->
+
+                            
+                            <!-- {{# status_date_label}}
+                            <div class="w-full pull-left mb-2 d-flex flex-row flex-wrap align-items-center"> 
+                                <span class="pull-left"><span class="lable_align">{{status_date_label}}</span> <span class="colon_align mr-1 ml-1"> :</span></span>
+                                <span class="value_align">{{status_change_date}}</span>
+                            </div>
+                            {{/ status_date_label}} -->
+                        </div>
+                    </div>
+                </div>
+            {{/records}}
+        </div>
+    {{/viewtypeCard}}
+{{/response}}

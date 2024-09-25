@@ -1,0 +1,36 @@
+{{!
+    This file is part of eAbyas
+    Copyright eAbyas Info Solutons Pvt Ltd, India
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 3 of the License, or
+    (at your option) any later version.
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+    
+    @author eabyas  <info@eabyas.in>
+}}
+<div class='leaderboard_content'>
+    <ul class="nav nav-tabs nav-fill gamification_tabs w-full" data-courseid={{courseid}} data-block_view="{{block_view}}">
+        <li class='nav-item nav-link gamification_link weekly active' data-type='weekly' data-startdate={{weekstart}} data-enddate={{weekend}}>
+            <a href="javascript:void(0)">{{# str }} weekly,block_gamification {{/ str}}</a>
+        </li>
+        <li class='nav-item nav-link gamification_link monthly' data-type='monthly' data-startdate={{monthstart}} data-enddate={{monthend}}>
+            <a href="javascript:void(0)">{{# str }} monthly,block_gamification {{/ str}}</a>
+        </li>
+        <li class='nav-item nav-link gamification_link overall' data-type='overall' data-startdate=0 data-enddate=0>
+            <a href="javascript:void(0)">{{# str }} overall,block_gamification {{/ str}}</a>
+        </li>
+    </ul>
+    <span class="overlay-icon-container loading hidden" data-region="overlay-icon-container">
+        <span class="loading-icon icon-no-margin">
+            {{#pix}} ajax-loader, local_costcenter, {{#str}} loading {{/str}} {{/pix}}
+        </span>
+    </span>
+    <div class='leaderboard gamification_content'>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template block_gamification/sub-navigation
+
+    Example context (json):
+    {
+    }
+}}
+<nav class="
+    gamification-text-left
+    gamification-flex-row gamification-flex-wrap gamification-border-0 gamification-border-b gamification-border-solid gamification-border-gray-100 gamification-pb-4 gamification-gap-2
+    lg:gamification-space-y-1 lg:gamification-flex-col lg:gamification-flex-nowrap lg:gamification-pb-0 lg:gamification-border-b-0 lg:gamification-gap-0
+    ">
+    {{#items}}
+        <a href="{{ url }}"
+            {{#current}}
+            class="lg:gamification-w-full gamification-no-underline gamification-bg-gray-100 gamification-text-gray-900 gamification-flex gamification-items-center gamification-px-3 gamification-py-2 gamification-text-sm gamification-font-medium gamification-rounded-md"
+            aria-current="page"
+            {{/current}}
+            {{^current}}
+            class="lg:gamification-w-full gamification-no-underline gamification-text-gray-600 hover:gamification-bg-gray-50 hover:gamification-text-gray-900 gamification-flex gamification-items-center gamification-px-3 gamification-py-2 gamification-text-sm gamification-font-medium gamification-rounded-md"
+            {{/current}}
+            >
+          <span class="gamification-truncate">{{ text }}</span>
+        </a>
+    {{/items}}
+</nav>

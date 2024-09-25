@@ -1,0 +1,137 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+<div class="certification_container w-100 pull-left mb-4 {{certificationstatusclass}}">
+    <div class="w-100 pull-left p-3 certificationcontainer_top">
+        <div class="w-100 pull-left">
+            <i class="fa fa-graduation-cap certificationicon pull-left"></i>
+            <a href="{{certificationurl}}" title = "{{ certificationname }}" class="crname_head pull-left">{{ certificationname_string }}</a>
+            <span class="bg_banner" title="{{ crstatustitle }}">
+                <span class="pull-right"></span>
+            </span>
+            <div class="pull-right showoptions{{certificationid}} actionicons">
+                {{# action}}
+                    {{# mouse_overicon}}
+                        <span  class="pull-right showoptions" data-action="showoptions{{certificationid}}" onmouseenter="(function(e){ require('theme_epsilon/quickactions').quickactionsCall({ selector:'showoptions{{certificationid}}' }) })(event)" onmouseleave="(function(e){require('theme_epsilon/quickactions').quickactionsCall({ selector:'showoptions{{certificationid}}' }) })(event)"><i class="fa fa-ellipsis-h options" aria-hidden="true" title="" aria-label=""></i></span>
+                    {{/ mouse_overicon}}  
+                    <ul class="options_container" id="showoptions{{certificationid}}">
+                        {{# delete}}
+                            <li>
+                                <a title = "{{# str}} delete {{/ str}}" href="javascript:void(0)" alt = "{{# str}} delete {{/ str}}"title = "{{# str}} delete {{/ str}}" onclick="(function(e){ require('local_certification/certification').deleteConfirm({action:'deletecertification', id: {{ certificationid }}, certificationid: {{ certificationid }}}) })(event)"><i class="fa fa-trash" aria-hidden="true" aria-label=""></i></a>
+                            </li>
+                        {{/ delete}}
+                        {{# edit}}
+                            <li>
+                                <a title = "{{# str}} edit {{/str}}" href="javascript:void(0)" title = "{{# str}} edit {{/str}}" onclick="(function(e){ require('local_certification/ajaxforms').init({contextid:1, component:'local_certification', callback:'certification_form', form_status:0, plugintype: 'local', pluginname: 'certification', id: {{ certificationid }} }) })(event)"><i class="fa fa-pencil fa-fw" aria-hidden="true" aria-label=""></i>
+                                </a>
+                            </li>
+                        {{/ edit}}
+                        {{# assignusers }}
+                            <li>
+                                <a title ="Assign Users" href="{{ assignusersurl }}"><i class="icon fa fa-user-plus fa-fw" aria-hidden="true" aria-label=""></i></a>
+                            </li>
+                        {{/ assignusers }}
+                    </ul>
+                {{/ action}}
+            </div>
+            <!--<a href="{{certificationurl}}"><div style="background-image: url('{{ classesimg }}');" alt="{{ certificationname }}" title="certificationname" class="classesimg courseimg_bg" ></div></a>-->
+            <!--<img src="{{ classesimg }}" title ="{{ certificationname }}" class="classesimg" />-->
+             <!--<div class="certificationname_strip">
+                 <span class="certificationname" title = "{{ certificationname }}" >{{ certificationname_string }}</span>
+                 <span class="classcreated" title="{{usercreated}}"">By&nbsp;{{ usercreated }}</span>
+             </div>-->
+             <!--<div class="classdate_strip">
+                 <span class="classdate"><i class="fa fa-calendar" aria-hidden="true"></i>{{ startdate }} to {{ enddate }}</span>
+             </div>-->
+        </div>
+        <div class="w-100 pull-left">
+            <div class="left_content- col-md-1 col-12 pull-left p-0"></div>
+            <div class="dataContainer col-md-11 col-12 pull-left p-0">
+                <div class="datacontent px-2 pb-2 w-100 pull-left">
+                    <div class="description">
+                        {{# isdescription}}
+                            {{^ descriptionstring}}
+                                <p class="text-muted">{{{ description }}}</p>
+                            {{/ descriptionstring }}
+                            {{# descriptionstring}}
+                                <p class="text-muted">{{ descriptionstring }}...</p>
+                            {{/ descriptionstring }}
+                        {{/ isdescription}}
+                        {{^ isdescription }}
+                            <p class="alert alert-info text-center">{{#str}}nocoursedesc, local_courses{{/str}}</p>
+                        {{/ isdescription }}
+                    </div>
+                    <!--<div class="dataContainer_left">-->
+
+                        <!--<p class="contentlist"><span class="lable_name text-muted">Scheduled date</span> <span class="text-muted">: </span><span class="">&nbsp;<b>{{ startdate }} to {{ enddate }}</b></span></p>-->
+
+                        <!--<p class="contentlist"><span class="lable_name text-muted">Code</span> <span class="text-muted pull-left">: </span><span class="">&nbsp;<b>{{ certificationname_string }}</b></span></p>
+
+                        <p class="contentlist"><span class="lable_name text-muted">Enrolled Users</span> <span class="text-muted">: </span><span class="">&nbsp;<b>{{ enrolled_users }}</b></span></p>
+
+                        <p class="contentlist"><span class="lable_name text-muted">Department</span> <span class="text-muted">: </span><span class="">&nbsp;<b>{{ departmentname }}</b></span></p>
+
+                        <p class="contentlist"><span class="lable_name text-muted">Seats Allocation</span> <span class="text-muted">: </span><span class="">&nbsp;<b>{{ seatallocation }}</b></span></p>-->
+                        <!--<span class="classdate"><i class="fa fa-calendar" aria-hidden="true"></i>{{ startdate }} to {{ enddate }}</span>-->
+                    <!--</div>-->
+                </div>
+            </div>
+            <!-- <div class="data_progress col-md-3 col-12 pull-left p-0">
+                <div class="progress-container my-3">
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: {{certificationprogress}}%" aria-valuenow="{{certificationprogress}}" aria-valuemin="0" aria-valuemax="100">{{certificationprogress}}%</div>
+                    </div>
+                </div>
+                <div class="progress-chart-container">
+                    <div class="progress-doughnut">
+                        <div class="progress-text has-percent">{{certificationprogress}}%</div>
+                        <div class="progress-indicator">
+                            <svg xmlns="http://www.w3.org/2000/svg">
+                                <g>
+                                    <title aria-hidden="true">{{certificationprogress}}</title>
+                                    <circle class="circle percent-{{certificationprogress}}" r="27.5" cx="35" cy="35"></circle>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+    <div class="w-100 pull-left p-0 certification_detail_footer">
+        <div class="coursesContainer pull-left">
+            <span class="certification_view_count_label">{{#str}}courses, local_certification{{/str}}</span>
+            <span class="certification_view_count">{{courses_count}}</span>
+        </div>
+        <div class="sessionsContainer pull-left">
+            <span class="certification_view_count_label">{{#str}}sessions, local_certification{{/str}}</span>
+            <span class="certification_view_count">{{sessions_count}}</span>
+        </div>
+        <div class="pointsContainer pull-left">
+            <span class="certification_view_count_label">{{#str}}users, local_certification{{/str}}</span>
+            <span class="certification_view_count">{{users_count}}</span>
+        </div>
+        <div class="certification_view_more_container">
+            <span class="certification_view_more_wrapper"></span>
+            <a href="{{certificationurl}}" class="certification_view_more">{{#str}}viewmore, local_certification{{/str}}</a>
+        </div>
+        <!--<div class="col-md-12 p-0">
+            <div class="viewmorestrip pull-right pt-15 pb-15">
+                <a href="view.php?ctid={{certificationid}}" class="viewmorelink">View More</a>
+            </div>
+        </div>-->
+    </div>
+</div>

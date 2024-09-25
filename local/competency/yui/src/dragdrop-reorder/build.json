@@ -1,0 +1,10 @@
+{
+    "name": "moodle-local_competency-dragdrop-reorder",
+    "builds": {
+        "moodle-local_competency-dragdrop-reorder": {
+            "jsfiles": [
+                "dragdropreorder.js"
+            ]
+        }
+    }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "moodle-block_gamification-rulepicker",
+  "builds": {
+    "moodle-block_gamification-rulepicker": {
+      "jsfiles": [
+        "rulepicker.js"
+      ]
+    }
+  }
+}

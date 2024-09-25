@@ -1,0 +1,333 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{# action}}
+    <ul class="course_extended_menu_list">
+        <li>
+            {{# assignusers}}
+                <div class="courseedit course_extended_menu_itemcontainer">
+                    <a class="course_extended_menu_itemlink" href="{{ assignusersurl }}"><i class="icon fa fa-user-plus fa-fw" aria-hidden="true" aria-label="" title ="{{# str }} assignusers,local_certification {{/ str}}"></i></a>
+                </div>
+            {{/ assignusers}}
+            
+        </li>
+        {{# unenroll}}
+            <li>
+                <div class="coursebackup course_extended_menu_itemcontainer">
+                    <a title="{{# str}} coursebackup {{/ str}}" class="course_extended_menu_itemlink" href="javascript:void(0)" alt = "{{# str}} unenroll,local_classroom {{/ str}}"
+                        title = "{{# str}}  unenroll,local_classroom {{/ str}}" onclick="(function(e){ require('local_certification/certification').unEnrolUser({contextid:1, certificationid: {{ certificationid }},certificationname:'{{certificationname_string}}', userid: {{thisuserid}} }) })(event)"><i class="icon fa fa-user-times" aria-hidden="true" aria-label="" title = "{{# str}}  unenroll,local_classroom {{/ str}}"></i></a>
+                </div>
+            </li>
+        {{/ unenroll}}
+        <li>
+            {{# edit}}
+                <div class="coursebackup course_extended_menu_itemcontainer">
+                    <a title="{{# str }} user_enrollments,local_certification {{/ str}}" class="course_extended_menu_itemlink" href="javascript:void(0)" title = "{{# str}} edit {{/str}}" onclick="(function(e){ require('local_certification/ajaxforms').init({contextid:1, component:'local_certification', callback:'certification_form', form_status:0, plugintype: 'local', pluginname: 'certification', id: {{ certificationid }} }) })(event)"><i class="icon fa fa-pencil fa-fw" aria-hidden="true" aria-label="" title = "{{# str}} edit {{/str}}"></i>
+                    </a>         
+                </div>
+            {{/ edit}}
+            </li>
+            <li>
+            {{# certificationcompletion}}
+                <div class="coursebackup course_extended_menu_itemcontainer">
+                    <a title="certification completion" class="course_extended_menu_itemlink" href="javascript:void(0)" title = "{{# str}} certificationcompletion, local_certification {{/str}}" onclick="(function(e){ require('local_certification/ajaxforms').init({contextid:1, component:'local_certification', callback:'certification_completion_form', form_status:0, plugintype: 'local', pluginname: 'certification_completion_settings', id: {{ certificationcompletion_id }}, ctid: {{ certificationid }} }) })(event)"><i class="icon fa fa-tags fa-fw" aria-hidden="true" aria-label="" title = "{{# str}} certificationcompletion , local_certification{{/str}}"></i>
+                    </a>         
+                </div>
+            {{/ certificationcompletion}}
+        </li>
+         {{#certification_actionstatus}}
+                <li>
+                      <div class="coursebackup course_extended_menu_itemcontainer">
+                          {{{.}}}       
+                      </div>
+                </li>
+         {{/certification_actionstatus}}
+         
+    </ul>
+{{/ action}}
+{{#download_certification}}
+ <ul class="course_extended_menu_list">
+    <li>
+          <div class="coursebackup course_extended_menu_itemcontainer">
+              {{{.}}}       
+          </div>
+    </li>
+</ul>
+{{/download_certification}}
+{{# certification}}
+<div class="certificationview_left">
+    <div class="certificationview_left_top">
+        <div class="classview_topcontent pl-0">
+            <div class="classview_topcontent_left p-0">
+                <div style="background-image: url('{{ certificationlogoimg }}');" alt="{{ certificationname }}" title="Certificate name" class="classviewimg" ></div>
+                <!--<img src="{{ certificationlogoimg }}" title="" class="classviewimg"/>-->
+            </div>
+            <div class="classview_topcontent_right">
+                <div class="certificationname_strip">
+                    <!-- <span class="coursename">{{ name }}</span> -->
+                    <span class="certification_schedule" title="{{#str}}schedule, local_certification{{/str}}">
+                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                        <div class="start_end">
+                       
+                            {{#startdate}}
+                           
+                                {{#userdate}}
+                                    
+                                       {{startdate}}, %d/%m/%Y %H:%M
+                                   
+                                {{/userdate}}
+                            {{/startdate}}
+                            {{^startdate}}
+                                {{#enddate}}
+                                   N/A
+                                {{/enddate}}
+                            {{/startdate}}
+                            {{#enddate}}
+                                <div class="certification_colon">-</div>
+                                {{#userdate}}
+                                   
+                                     {{enddate}}, %d/%m/%Y %H:%M
+                                   
+                                {{/userdate}}
+                            {{/enddate}}
+                            {{^enddate}}
+                                {{#startdate}}
+                                   &nbsp;-&nbsp;N/A
+                                {{/startdate}}
+                            {{/enddate}}
+                            {{^startdate}}
+                                {{^enddate}}
+                                   N/A
+                                {{/enddate}}
+                            {{/startdate}}
+                        </div>
+                    </span>
+                </div>
+                {{# certification_status}}
+                <div class="cr_status_icon cr_status_band">
+                    <span class="status_{{certification_status}} cr_status_strip" title="{{certification_status}}" alt="{{certification_status}}">{{{certification_status}}}</span>&nbsp;
+                </div>
+                {{/ certification_status }}
+                {{# userenrolmentcap }}
+                <!--<div class="enrol_strip">
+                    <span class="enroll"><a href="enrollusers.php?ctid={{id}}"  title="attendance" ><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Enroll </a></span>
+                </div>-->
+                {{/ userenrolmentcap }}
+                {{# selfenrolmentcap }}
+                    <div class="enrol_strip">
+                        <span class="enroll">{{{.}}}</span>
+                    </div>
+                {{/ selfenrolmentcap }}
+             </div>
+             <div class = 'ratings_data'>
+                {{{display_ratings}}}
+                {{{display_like}}}
+                {{{display_review}}}
+            </div>
+        </div>
+    </div>
+    <div class="certification_progress_wrap">
+        <h5 class="certification_progress_stats">{{#str}}certification_status, local_certification{{/str}}</h5>
+        <div class="certification_progress_stats_container">
+            <div class="certification_progress_detail text-center">
+                <span class="certification_stat_value">{{enrolled}}</span>
+                <span class="certification_stat_label">{{# str}}enrolled, local_certification{{/ str}}</span>
+            </div>
+        <div class="certification_progress_detail text-center">
+            <span class="certification_stat_value">{{inprogress}}</span>
+            <span class="certification_stat_label">{{# str}}inprogress, local_certification{{/ str}}</span>
+        </div>
+         <div class="certification_progress_detail text-center">
+            <span class="certification_stat_value">{{completed}}</span>
+            <span class="certification_stat_label">{{# str}}completed, local_certification{{/ str}}</span>
+        </div>
+    </div>
+</div>
+</div>
+<div class="classview_tabscontainer">
+    <div class="certificationname_strip">
+        <span class="certificationname" title = "{{ certificationname_string }}">{{ certificationname_string }}</span>
+         <!--<span class="coursename">{{ name }}</span>-->
+    </div>
+    <div class="certification_description">
+        {{# isdescription}}
+            {{^ descriptionstring}}
+                <p class="text-muted">{{{ description }}}</p>
+            {{/ descriptionstring }}
+            {{# descriptionstring}}
+                <p class="text-muted">{{ descriptionstring }} ...</p>
+            {{/ descriptionstring }}
+        {{/ isdescription}}
+        {{^ isdescription }}
+            <p class="alert alert-info text-center">{{#str}}nocoursedesc, local_courses{{/str}}</p>
+        {{/ isdescription }}
+    </div>
+    <div class="certification_image_flow">
+    {{# courses_condition}}
+        <div class="flow_courses flow_images">
+            {{#pix}}workflow_courses, local_certification{{/pix}}
+            <span>{{courses_condition}}({{certificationcourses_count}})</span>
+        </div>
+    {{/ courses_condition}}
+     {{# courses_condition}}
+     {{# sessions_condition}}
+        <span class="flow_operation plus">+</span>
+     {{/sessions_condition}}
+     {{/ courses_condition}}
+    {{# sessions_condition}}
+        <div class="flow_sessions flow_images">
+            {{#pix}}workflow_sessions, local_certification{{/pix}}
+            <span>{{sessions_condition}}({{certificationsessions_count}})</span>
+        </div>
+    {{/sessions_condition}}
+    {{#equal_condition}}
+        <span class="flow_operation equals">=</span>
+    {{/equal_condition}}
+        <div class="flow_certification flow_images">
+            {{#pix}}workflow_certificate, local_certification{{/pix}}
+            <span>{{#str}}certification, local_certification{{/str}}</span>
+        </div>
+    </div>
+
+    <div class="w-full pull-left mt-4">
+        <ul class="nav nav-tabs inner_tabs" role="tablist">
+        {{#course_tab}}
+            <li class="nav-item certificationmodules" role="presentation" data-module="viewcertificationcourses">
+                <a  class="active nav-link" data-toggle="tab" href="javascript:void(0);" aria-controls="courses" role="tab">{{# str }} courses, local_certification {{/ str }}</a>
+            </li>
+         {{/course_tab}}
+        <div class="classview_menu_list_contianer">
+        <ul class="course_extended_menu_list">
+        {{# certificate_exists }}
+            {{# certificate_download }}
+                <li>
+                    <a class="course_extended_menu_itemlink" title="{{#str}} download_certificate, local_courses {{/ str}}" class="course_extended_menu_itemlink" href="{{ config.wwwroot}}/local/certificates/view.php?ctid={{certificateid}}&mtype=classroom&mid={{classroomid}}"><i class="icon fa fa-download" aria-hidden="true"></i>
+                    </a>
+                </li>
+            {{/ certificate_download }}
+            {{^ certificate_download }}
+                    <li>
+                        <a class="course_extended_menu_itemlink" title="{{# str}} unableto_download_msg, local_classroom, Learning path {{/str}}" class="course_extended_menu_itemlink" href="javascript: void(0)"><!-- <i class="icon fa fa-download" aria-hidden="true"></i> -->
+                        <i class="icon fa fa-download" aria-hidden="true"></i>
+
+                        </a>
+                    </li>
+            {{/ certificate_download }}
+        {{/ certificate_exists }}
+       </ul>
+       </div>
+        {{#session_tab}}
+            <li class="nav-item certificationmodules" role="presentation" data-module="viewcertificationsessions">
+                <a  class="nav-link" data-toggle="tab"  href="javascript:void(0);" aria-controls="sessions" role="tab">{{# str }} sessions, local_certification {{/ str }}</a>
+            </li>
+        {{/session_tab}}
+         {{#user_tab }}
+            <li class="nav-item certificationmodules" role="presentation" data-module="viewcertificationusers">
+                <a  class="nav-link" data-toggle="tab" href="javascript:void(0);" aria-controls="users" role="tab">{{# str }} users, local_certification {{/ str }}</a>
+            </li>
+         {{/user_tab }}
+         {{#requested_users_tab}}
+            <li class="nav-item certificationmodules" role="presentation" data-module="viewcertificationrequested_users_tab" data-options = '{{request_options}}' data-dataoptions = '{{request_dataoptions}}' data-filterdata = '{{request_filterdata}}'>
+                <a  class="nav-link" data-toggle="tab" href="javascript:void(0);" aria-controls="requested_users_tab" role="tab">{{# str }} requested_users_tab, local_certification {{/ str }}</a>
+            </li>
+        {{/requested_users_tab}}
+         {{#feedback_tab }}
+            <li class="nav-item certificationmodules" role="presentation" data-module="viewcertificationevaluations">
+                <a  class="nav-link" data-toggle="tab" href="javascript:void(0);" aria-controls="evaluations" role="tab">{{# str }} pluginname, local_evaluation {{/ str }}</a>
+            </li>
+        {{/feedback_tab }}
+        {{#completion_settings_tab}}
+            <li class="nav-item certificationmodules" role="presentation" data-module="viewcertificationcompletion_settings_tab">
+                <a  class="nav-link" data-toggle="tab" href="javascript:void(0);" aria-controls="completion_settings_tab" role="tab">{{# str }} completion_settings_tab, local_certification {{/ str }}</a>
+            </li>
+        {{/completion_settings_tab}}
+        {{#user_tab }}
+        {{#target_audience_tab}}
+            <li class="nav-item certificationmodules" role="presentation" data-module="viewcertificationtarget_audience_tab">
+                <a  class="nav-link" data-toggle="tab" href="javascript:void(0);" aria-controls="target_audience_tab" role="tab">{{# str }} target_audience_tab, local_certification {{/ str }}</a>
+            </li>
+        {{/target_audience_tab}}
+        {{/user_tab }}
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="sessions" role="tabpanel">
+                <div class="" id="certificationmodulescontent">
+                    {{{ certificationsessions }}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{#js}}
+    $( document ).ready(function() {
+        $(".trainer-next, .trainer-prev").click(function () {
+            var div = $(".trainers_scroll")[0];
+            var html = $(div).html();
+            $(div).remove();
+            $(".topcontent_right_bottom").append("<div class=\"col-md-4 trainers_scroll\">" + html + "</div>");
+        });
+    });
+$('.certificationmodules').click(function(){
+    if ($(this).find('a').hasClass('active')){
+        return true;
+    }
+    var certificationmodule = $(this).data('module');
+    var options = $(this).data('options');
+    var dataoptions = $(this).data('dataoptions');
+    var filterdata = $(this).data('filterdata');
+    $.ajax({
+        method: 'POST',
+        url: M.cfg.wwwroot + '/local/certification/ajax.php',
+        data: {
+            action: certificationmodule,
+            certificationmodulehead: true,
+            certificationid:{{id}}
+        },
+        success:function(resp){
+            $('#certificationmodulescontent').html(resp);
+            if (certificationmodule === 'viewcertificationsessions') {
+                require(['local_certification/certification'], function(certification) {
+                    certification.SessionDatatable();
+                });
+            } else if (certificationmodule === 'viewcertificationcourses') {
+                require(['local_certification/certification'], function(certification) {
+                    certification.CoursesDatatable();
+                });
+
+            } else if (certificationmodule === 'viewcertificationusers') {
+                require(['local_certification/certification'], function(certification) {
+                    certification.UsersDatatable();
+                });
+            }else if (certificationmodule === 'viewcertificationevaluations') {
+                require(['local_certification/certification'], function(certification) {
+                    certification.EvaluationsDatatable();
+                });
+            }else if (certificationmodule === 'viewcertificationrequested_users_tab') {
+                {{! require(['local_request/requestconfirm'], function(requestconfirm) {
+                    requestconfirm.requestDatatable();
+                }); }}
+                require(['local_costcenter/cardPaginate'], function(cardPaginate) {
+                                cardPaginate.reload(options, dataoptions,filterdata);
+                });
+            }  else if (certificationmodule === '') {
+
+            }
+    }
+    });
+})
+
+{{/js}}
+{{/ certification }}

@@ -1,0 +1,10 @@
+{
+  "name": "moodle-local_certification-rearrange",
+  "builds": {
+    "moodle-local_certification-rearrange": {
+      "jsfiles": [
+        "rearrange.js"
+      ]
+    }
+  }
+}

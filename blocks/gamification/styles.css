@@ -1,0 +1,1170 @@
+/**
+ * All Level Up gamification styles are built from the file css/styles.css.
+ */
+
+.block_gamification * {
+    /** For older themes. */
+    box-sizing: border-box;
+}
+.block_gamification .gamification-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+.block_gamification .gamification-relative {
+    position: relative;
+}
+.block_gamification .gamification-order-1 {
+    order: 1;
+}
+.block_gamification .gamification-order-2 {
+    order: 2;
+}
+.block_gamification .gamification-m-0 {
+    margin: 0px;
+}
+.block_gamification .gamification-mx-2 {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+.block_gamification .gamification-mb-6 {
+    margin-bottom: 1.5rem;
+}
+.block_gamification .gamification-mt-2 {
+    margin-top: 0.5rem;
+}
+.block_gamification .\!gamification-mr-1 {
+    margin-right: 0.25rem !important;
+}
+.block_gamification .gamification-mb-2 {
+    margin-bottom: 0.5rem;
+}
+.block_gamification .gamification-mb-4 {
+    margin-bottom: 1rem;
+}
+.block_gamification .gamification-ml-2 {
+    margin-left: 0.5rem;
+}
+.block_gamification .gamification-mt-1 {
+    margin-top: 0.25rem;
+}
+.block_gamification .gamification-mb-1 {
+    margin-bottom: 0.25rem;
+}
+.block_gamification .gamification-mt-6 {
+    margin-top: 1.5rem;
+}
+.block_gamification .gamification-ml-1 {
+    margin-left: 0.25rem;
+}
+.block_gamification .gamification-mt-4 {
+    margin-top: 1rem;
+}
+.block_gamification .gamification-mr-2 {
+    margin-right: 0.5rem;
+}
+.block_gamification .gamification-mr-4 {
+    margin-right: 1rem;
+}
+.block_gamification .gamification-ml-4 {
+    margin-left: 1rem;
+}
+.block_gamification .gamification--ml-4 {
+    margin-left: -1rem;
+}
+.block_gamification .gamification-block {
+    display: block;
+}
+.block_gamification .gamification-inline-block {
+    display: inline-block;
+}
+.block_gamification .gamification-flex {
+    display: flex;
+}
+.block_gamification .gamification-table {
+    display: table;
+}
+.block_gamification .gamification-table-cell {
+    display: table-cell;
+}
+.block_gamification .gamification-table-row {
+    display: table-row;
+}
+.block_gamification .gamification-hidden {
+    display: none;
+}
+.block_gamification .gamification-h-10 {
+    height: 2.5rem;
+}
+.block_gamification .gamification-h-5 {
+    height: 1.25rem;
+}
+.block_gamification .gamification-h-3 {
+    height: 0.75rem;
+}
+/*.block_gamification .gamification-h-full {
+    height: 100%;
+}*/
+.block_gamification .gamification-h-auto {
+    height: auto;
+}
+.block_gamification .gamification-min-h-10 {
+    min-height: 2.5rem;
+}
+.block_gamification .gamification-min-h-full {
+    min-height: 100%;
+}
+.block_gamification .gamification-w-full {
+    width: 100%;
+}
+.block_gamification .gamification-w-5 {
+    width: 1.25rem;
+}
+.block_gamification .gamification-w-8 {
+    width: 2rem;
+}
+.block_gamification .gamification-w-1\/2 {
+    width: 50%;
+}
+.block_gamification .gamification-w-28 {
+    width: 7rem;
+}
+.block_gamification .gamification-w-10 {
+    width: 2.5rem;
+}
+.block_gamification .gamification-w-20 {
+    width: 5rem;
+}
+.block_gamification .gamification-min-w-\[0\.25rem\] {
+    min-width: 0.25rem;
+}
+.block_gamification .gamification-min-w-\[2\.25rem\] {
+    min-width: 2.25rem;
+}
+.block_gamification .gamification-min-w-\[3rem\] {
+    min-width: 3rem;
+}
+.block_gamification .gamification-min-w-px {
+    min-width: 1px;
+}
+.block_gamification .gamification-max-w-full {
+    max-width: 100%;
+}
+.block_gamification .gamification-max-w-\[99\%\] {
+    max-width: 99%;
+}
+.block_gamification .gamification-max-w-\[4rem\] {
+    max-width: 4rem;
+}
+.block_gamification .gamification-max-w-\[6rem\] {
+    max-width: 6rem;
+}
+.block_gamification .gamification-max-w-\[80\%\] {
+    max-width: 80%;
+}
+.block_gamification .gamification-max-w-xs {
+    max-width: 20rem;
+}
+.block_gamification .gamification-flex-1 {
+    flex: 1 1 0%;
+}
+.block_gamification .gamification-flex-none {
+    flex: none;
+}
+.block_gamification .gamification-flex-2 {
+    flex: 2 2 0%;
+}
+.block_gamification .gamification-grow {
+    flex-grow: 1;
+}
+.block_gamification .gamification-grow-0 {
+    flex-grow: 0;
+}
+.block_gamification .gamification-flex-row {
+    flex-direction: row;
+}
+.block_gamification .gamification-flex-col {
+    flex-direction: column;
+}
+.block_gamification .gamification-flex-wrap {
+    flex-wrap: wrap;
+}
+.block_gamification .gamification-items-start {
+    align-items: flex-start;
+}
+.block_gamification .gamification-items-end {
+    align-items: flex-end;
+}
+.block_gamification .gamification-items-center {
+    align-items: center;
+}
+.block_gamification .gamification-justify-end {
+    justify-content: flex-end;
+}
+.block_gamification .gamification-justify-center {
+    justify-content: center;
+}
+.block_gamification .gamification-gap-4 {
+    gap: 1rem;
+}
+.block_gamification .gamification-gap-1 {
+    gap: 0.25rem;
+}
+.block_gamification .gamification-gap-2 {
+    gap: 0.5rem;
+}
+.block_gamification .gamification-gap-3 {
+    gap: 0.75rem;
+}
+.block_gamification .gamification-gap-6 {
+    gap: 1.5rem;
+}
+.block_gamification .gamification-self-end {
+    align-self: flex-end;
+}
+.block_gamification .gamification-overflow-hidden {
+    overflow: hidden;
+}
+.block_gamification .gamification-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.block_gamification .gamification-whitespace-nowrap {
+    white-space: nowrap;
+}
+.block_gamification .gamification-break-all {
+    word-break: break-all;
+}
+.block_gamification .gamification-rounded-xl {
+    border-radius: 0.75rem;
+}
+.block_gamification .gamification-rounded-full {
+    border-radius: 9999px;
+}
+.block_gamification .gamification-rounded-md {
+    border-radius: 0.375rem;
+}
+.block_gamification .gamification-rounded {
+    border-radius: 0.25rem;
+}
+.block_gamification .gamification-border-0 {
+    border-width: 0px;
+}
+.block_gamification .gamification-border-2 {
+    border-width: 2px;
+}
+.block_gamification .gamification-border-b {
+    border-bottom-width: 1px;
+}
+.block_gamification .gamification-border-solid {
+    border-style: solid;
+}
+.block_gamification .gamification-border-gray-100 {
+    border-color: #f3f4f6;
+}
+.block_gamification .gamification-border-gray-200 {
+    border-color: #e5e7eb;
+}
+.block_gamification .gamification-border-sky-400 {
+    border-color: #38bdf8;
+}
+.block_gamification .gamification-bg-yellow-200 {
+    background-color: #fef08a;
+}
+.block_gamification .gamification-bg-gray-100 {
+    background-color: #f3f4f6;
+}
+.block_gamification .gamification-bg-gray-200 {
+    background-color: #e5e7eb;
+}
+.block_gamification .gamification-bg-green-400 {
+    background-color: #4ade80;
+}
+.block_gamification .gamification-p-0 {
+    padding: 0px;
+}
+.block_gamification .gamification-p-0\.5 {
+    padding: 0.125rem;
+}
+.block_gamification .gamification-p-4 {
+    padding: 1rem;
+}
+.block_gamification .gamification-px-2 {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+.block_gamification .gamification-py-0\.5 {
+    padding-top: 0.125rem;
+    padding-bottom: 0.125rem;
+}
+.block_gamification .gamification-py-0 {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+.block_gamification .gamification-px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.block_gamification .gamification-py-2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+.block_gamification .gamification-px-3 {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+}
+.block_gamification .gamification-py-1 {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+}
+.block_gamification .gamification-pr-2 {
+    padding-right: 0.5rem;
+}
+.block_gamification .gamification-pl-2 {
+    padding-left: 0.5rem;
+}
+.block_gamification .gamification-pb-4 {
+    padding-bottom: 1rem;
+}
+.block_gamification .gamification-pl-4 {
+    padding-left: 1rem;
+}
+.block_gamification .gamification-pt-2 {
+    padding-top: 0.5rem;
+}
+.block_gamification .gamification-text-left {
+    text-align: left;
+}
+.block_gamification .gamification-text-center {
+    text-align: center;
+}
+.block_gamification .gamification-text-right {
+    text-align: right;
+}
+.block_gamification .gamification-align-top {
+    vertical-align: top;
+}
+.block_gamification .gamification-align-middle {
+    vertical-align: middle;
+}
+.block_gamification .gamification-font-mono {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+.block_gamification .gamification-text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+.block_gamification .gamification-text-xs {
+    font-size: 0.75rem;
+    line-height: 1rem;
+}
+.block_gamification .gamification-text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+}
+.block_gamification .gamification-text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+}
+.block_gamification .gamification-text-xxs {
+    font-size: 0.6875rem;
+}
+.block_gamification .gamification-font-bold {
+    font-weight: 700;
+}
+.block_gamification .gamification-font-medium {
+    font-weight: 500;
+}
+.block_gamification .gamification-font-normal {
+    font-weight: 400;
+}
+.block_gamification .gamification-uppercase {
+    text-transform: uppercase;
+}
+.block_gamification .gamification-leading-tight {
+    line-height: 1.25;
+}
+.block_gamification .gamification-leading-none {
+    line-height: 1;
+}
+.block_gamification .gamification-text-gray-500 {
+    color: #6b7280;
+}
+.block_gamification .gamification-text-gray-900 {
+    color: #111827;
+}
+.block_gamification .gamification-text-gray-600 {
+    color: #4b5563;
+}
+.block_gamification .gamification-no-underline {
+    text-decoration-line: none;
+}
+.block_gamification .gamification-transition-opacity {
+    transition-property: opacity;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+.block_gamification .gamification-space-x-1 > :not([hidden]) ~ :not([hidden]) {
+    margin-right: 0;
+    margin-left: 0.25rem;
+}
+.block_gamification .gamification-space-y-4 > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 1rem;
+    margin-bottom: 0;
+}
+.block_gamification .gamification-space-x-4 > :not([hidden]) ~ :not([hidden]) {
+    margin-right: 0;
+    margin-left: 1rem;
+}
+.block_gamification .gamification-space-y-0\.5 > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 0.125rem;
+    margin-bottom: 0;
+}
+.block_gamification .gamification-space-y-0 > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 0px;
+    margin-bottom: 0;
+}
+
+/** Cancel overflow of .no-overflow */
+.block_gamification .gamification-cancel-overflow .no-overflow {
+    overflow: visible;
+}
+
+/** Legacy styles. */
+.block_gamification-level {
+    background: url([[pix:block_gamification|10]]) no-repeat;
+    background-size: 100px 100px;
+    color: #fff;
+    font-size: 4em;
+    height: 100px;
+    line-height: 110px;
+    margin: 10px 0;
+    text-align: center;
+    width: 100px;
+
+    cursor: default;
+
+    -webkit-user-select: none;
+
+       -moz-user-select: none;
+
+            user-select: none;
+}
+
+.block_gamification-level.level-1 {
+    background-image: url([[pix:block_gamification|1]]);
+}
+.block_gamification-level.level-2 {
+    background-image: url([[pix:block_gamification|2]]);
+}
+.block_gamification-level.level-3 {
+    background-image: url([[pix:block_gamification|3]]);
+}
+.block_gamification-level.level-4 {
+    background-image: url([[pix:block_gamification|4]]);
+}
+.block_gamification-level.level-5 {
+    background-image: url([[pix:block_gamification|5]]);
+}
+.block_gamification-level.level-6 {
+    background-image: url([[pix:block_gamification|6]]);
+}
+.block_gamification-level.level-7 {
+    background-image: url([[pix:block_gamification|7]]);
+}
+.block_gamification-level.level-8 {
+    background-image: url([[pix:block_gamification|8]]);
+}
+.block_gamification-level.level-9 {
+    background-image: url([[pix:block_gamification|9]]);
+}
+
+.block_gamification-level.verysmall {
+    height: 20px;
+    width: 20px;
+    font-size: 10px;
+    line-height: 25px;
+    margin: 0 auto;
+    background-size: cover;
+}
+
+.block_gamification-level.small {
+    height: 35px;
+    width: 35px;
+    font-size: 18px;
+    line-height: 40px;
+    margin: 0 auto;
+    background-size: cover;
+}
+.block_gamification-level.medium {
+    height: 50px;
+    width: 50px;
+    font-size: 24px;
+    line-height: 54px;
+    margin: 0 auto;
+    background-size: cover;
+}
+
+.block_gamification-level.level-badge,
+.block_gamification-level.level-badge.small,
+.block_gamification-level.level-badge.medium {
+    background: none;
+    height: auto;
+    width: auto;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
+}
+.block_gamification-level.level-badge {
+    line-height: 100px;
+}
+.block_gamification-level.level-badge.small {
+    line-height: 35px;
+}
+.block_gamification-level.level-badge.medium {
+    line-height: 50px;
+}
+.block_gamification-level.level-badge img {
+    width: 100px;
+}
+.block_gamification-level.level-badge.verysmall img {
+    width: 20px;
+    height: 20px;
+}
+.block_gamification-level.level-badge.small img,
+.block_gamification-level.level-badge.medium img {
+    width: auto;
+    max-width: 100px;
+}
+.block_gamification-level.level-badge.small img {
+    height: 35px;
+}
+.block_gamification-level.level-badge.medium img {
+    height: 50px;
+}
+
+.block_gamification-instructions {
+    margin-bottom: 2em;
+}
+
+/** Block content. */
+.block.block_gamification .block_gamification-level {
+    margin-left: auto;
+    margin-right: auto;
+}
+.block.block_gamification .alert.alert-block {
+    padding: 0.5rem;
+    padding-top: 0.375rem;
+    padding-bottom: 0.375rem;
+}
+.block.block_gamification .block_gamification-level-progress [role=progressbar] {
+    height: 1rem;
+}
+.block.block_gamification .block_gamification-heading {
+    margin-bottom: 1rem;
+    border-width: 0px;
+    border-bottom-width: 1px;
+    border-style: solid;
+    border-color: #e5e7eb;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0em;
+    color: #4b5563;
+}
+
+.block_gamification nav {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+    align-items: stretch;
+    border-width: 0px;
+    border-top-width: 1px;
+    border-style: solid;
+    border-color: #e5e7eb;
+}
+.block_gamification nav .nav-button {
+    flex: 1;
+    align-self: auto;
+    text-decoration: none;
+    color: #333;
+    font-size: 80%;
+    padding: 5px 5px 0;
+}
+.block_gamification nav .nav-button .icon {
+    margin: 0;
+    padding: 0;
+}
+.block_gamification nav .nav-button:hover {
+    background: #eee;
+}
+
+/** Use over defined class name to re-use it through the block pages. */
+.block_gamification-gamification {
+    display: inline-block;
+    white-space: nowrap;
+}
+.block_gamification-gamification .pts,
+.block_gamification-gamification .sign {
+    display: inline-block;
+    letter-spacing: 0;
+}
+.block_gamification-gamification .sign-sup {
+    vertical-align: super;
+    font-size: 0.6428571428571429em; /* 9px. */
+    line-height: 0.6428571428571429em;
+}
+
+/** Levels preview. */
+.block_gamification-level-preview .previewed-level {
+    display: inline-block;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+.block_gamification-level-preview .level-name {
+    white-space: nowrap;
+    text-align: center;
+}
+
+/** Use our own highlight because of discrepencies between various themes. Sorry themers,
+    it's a nightmare to maintain a plugin for multiple themes... */
+.block_gamification-table tr.highlight-row > td {
+    background-color: #fef9c3 !important;
+}
+
+/**
+ * Ladder table.
+ */
+.block_gamification-table td {
+    /* Using !important because it's late and I can't be bothered looking for an alternative. */
+    vertical-align: middle !important; /* stylelint-disable-line declaration-no-important */
+}
+.block_gamification-table .col-lvl {
+    width: 50px;
+    text-align: center;
+}
+.block_gamification-table .col-rank {
+    white-space: nowrap;
+    width: 50px;
+}
+.block_gamification-table .col-userpic {
+    width: 35px;
+}
+.block_gamification-table .userpicture {
+    /* Margin only present in recent Moodle. */
+    margin-right: 5px;
+}
+.dir-rtl .block_gamification-table .userpicture {
+    margin-left: 5px;
+    margin-right: 0;
+}
+
+/**
+ * Report table.
+ */
+.block_gamification-report-table td {
+    vertical-align: middle !important; /* stylelint-disable-line declaration-no-important */
+}
+
+/**
+ * Page navigation.
+ */
+.block_gamification-page-nav a {
+    position: relative;
+}
+.block_gamification-page-nav .has-new {
+    border-radius: 50%;
+    width: 7px;
+    height: 7px;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    background-color: #d9534f;
+}
+.dir-rtl .block_gamification-page-nav .has-new {
+    left: 4px;
+}
+
+/**
+ * Dismissable notice.
+ */
+.block_gamification-dismissable-notice .alert {
+    /** We override the padding, because else the close button doesn't align well... */
+    padding: 14px;
+}
+.block_gamification-dismissable-notice .dismiss-action {
+    float: right;
+    line-height: 12px;
+}
+.block_gamification-dismissable-notice .dismiss-action .icon {
+    padding: 0;
+    margin: 0;
+    width: 12px;
+    height: 12px;
+}
+.dir-rtl .block_gamification-dismissable-notice .dismiss-action {
+    float: left;
+}
+
+/**
+ * Notification dialogue.
+ */
+
+.block_gamification-notification-hidden {
+    display: none;
+}
+.block_gamification-notification .moodle-dialogue-bd,
+.block_gamification-notification .moodle-dialogue-ft {
+    text-align: center !important; /* stylelint-disable-line declaration-no-important */
+}
+.block_gamification-notification .level-headline {
+    font-size: 1.4em;
+    font-weight: bold;
+}
+.block_gamification-notification .level-name {
+    margin-top: 1em;
+    font-size: 16px;
+    font-weight: bold;
+}
+.block_gamification-notification .moodle-dialogue-ft button {
+    /* Helps centering the button in the dialogue */
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/**
+ * Rule picker dialogue.
+ */
+.block_gamification-rulepicker-hidden {
+    display: none;
+}
+.block_gamification-rulepicker-content .rule {
+    cursor: pointer;
+    padding: .5rem;
+    border-bottom: 1px solid #efefef;
+}
+.block_gamification-rulepicker-content .rule:last-child {
+    border-bottom-width: 0;
+}
+.block_gamification-rulepicker-content .rule:focus,
+.block_gamification-rulepicker-content .rule:hover {
+    background-color: #efefef;
+}
+.block_gamification-rulepicker-content .rule h3 {
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin: 0 !important;
+}
+.block_gamification-rulepicker-content .rule .info {
+    margin-top: .5rem;
+    font-size: .875rem;
+}
+
+/**
+ * Rules pages.
+ *
+ * Note: We find the very first rule using .filter-rules > .rule
+ */
+.block-gamification-filters-group .block-gamification-filters-submit-actions  {
+    margin-top: 2em;
+}
+.block-gamification-filters-group h4:not(:first-of-type) {
+    margin-top: 1em;
+}
+.block-gamification-filters-wrapper ul {
+    list-style: none;
+    padding-left: 0;
+    padding-right: 0;
+}
+.block-gamification-filters-wrapper p,
+.block-gamification-filters-wrapper ul,
+.block-gamification-filters-wrapper ul.filters-list,
+/** Made more specific for RTL. */ .block-gamification-filters-wrapper input[type],
+.block-gamification-filters-wrapper button,
+.block-gamification-filters-wrapper select {
+    margin: 0;
+}
+.block-gamification-filters-wrapper input[type],
+.block-gamification-filters-wrapper select {
+    /* In Edge the line height is inherited when we do not do this. */
+    line-height: 18px;
+    max-width: 100%;
+}
+.block-gamification-filters-wrapper .filter-rules {
+    margin-left: 20px;
+    margin-top: 5px;
+}
+.block-gamification-filters-wrapper .filter {
+    border: 1px solid #ddd;
+    margin: 10px 0;
+    padding: 8px 4px;
+}
+.block-gamification-filters-wrapper .filter-add {
+    margin: 10px 0;
+}
+.block-gamification-filters-wrapper .rule-rules {
+    margin-left: 35px;
+}
+.block-gamification-filters-wrapper .filter-rules > .rule {
+    border: 0;
+    padding-left: 0;
+}
+.block-gamification-filters-wrapper .filter-rules > .rule::before {
+    border: 0;
+}
+.block-gamification-filters-wrapper .filter-rules > .rule > .rule-rules {
+    margin-left: 20px;
+}
+.block-gamification-filters-wrapper .filter-rules > .rule > .rule-definition {
+    padding-left: 5px;
+}
+.block-gamification-filters-wrapper .rule-type-ruleset,
+.block-gamification-filters-wrapper .rule-type-ruleset .rule-rules > .rule:first-child {
+    padding-top: 5px;
+}
+.block-gamification-filters-wrapper .rule-type-ruleset > .rule-definition {
+    background-color: #f1f1f1;
+    padding-bottom: 2px;
+}
+.block-gamification-filters-wrapper .rule-rules .rule {
+    border-left: 1px dotted #ccc;
+    min-height: 40px;
+    padding-left: 15px;
+    position: relative;
+}
+.block-gamification-filters-wrapper .rule-rules .rule::before {
+    border-top: 1px dotted #ccc;
+    content: '';
+    display: block;
+    left: 0;
+    position: absolute;
+    top: 20px;
+    width: 15px;
+}
+.block-gamification-filters-wrapper .rule-type-ruleset .rule-rules > .rule:first-child::before,
+.block-gamification-filters-wrapper .rule.rule-type-ruleset::before {
+    top: 25px;
+}
+.block-gamification-filters-wrapper .rule-add {
+    padding: 10px 17px;
+    position: relative;
+    line-height: 20px;
+}
+.block-gamification-filters-wrapper .rule-add::before,
+.block-gamification-filters-wrapper .rule-rules .rule:last-child::before {
+    border-bottom: 1px dotted #ccc;
+    border-left: 1px dotted #ccc;
+    border-top: 0;
+    content: '';
+    display: block;
+    height: 20px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 15px;
+}
+.block-gamification-filters-wrapper .rule-rules .rule:last-child {
+    border: 0;
+}
+.block-gamification-filters-wrapper .rule-move,
+.block-gamification-filters-wrapper .filter-move {
+    cursor: move;
+    margin: 0 0.5rem;
+}
+.block-gamification-filters-wrapper .filter-delete,
+.block-gamification-filters-wrapper .rule-delete {
+    margin-left: 0.5rem;
+}
+.block-gamification-filters-wrapper .filter-rules > .rule > .rule-definition .rule-delete,
+.block-gamification-filters-wrapper .filter-rules > .rule > .rule-definition .rule-move {
+    /** Hide the move/delete button on the top rule. */
+    display: none;
+}
+
+/** Readonly filters. */
+.block-gamification-filters-wrapper .filters-readonly .filter {
+    padding: 10px;
+}
+.block-gamification-filters-wrapper .filters-readonly .filter-rules > .rule > .rule-definition,
+.block-gamification-filters-wrapper .filters-readonly .rule-rules .rule {
+    line-height: 30px;
+    min-height: 30px;
+}
+.block-gamification-filters-wrapper .filters-readonly .filter-rules > .rule > .rule-definition {
+    padding: 0 10px;
+}
+.block-gamification-filters-wrapper .filters-readonly .rule-type-ruleset .rule-rules > .rule:first-child::before,
+.block-gamification-filters-wrapper .filters-readonly .rule.rule-type-ruleset::before {
+    top: 20px;
+}
+.block-gamification-filters-wrapper .filters-readonly .rule-rules .rule::before {
+    top: 15px;
+}
+.block-gamification-filters-wrapper .filters-readonly .rule-rules .rule:last-child::before {
+    top: 0;
+    height: 15px;
+}
+
+/** Level grid */
+
+.block_gamification-level-grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+.block_gamification-level-grid .block_gamification-level-no {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+/*    color: #fff;*/
+}
+.block_gamification-level-grid .block_gamification-level-boxed {
+    flex: 1 1 25%;
+    display: flex;
+    justify-content: center;
+    padding-right: 1em;
+    padding-bottom: 1em;
+    box-sizing: border-box;
+}
+.block_gamification-level-grid .block_gamification-level-boxed-with-desc {
+    flex-basis: 50%;
+    flex-grow: 2;
+}
+.block_gamification-level-grid .block_gamification-level-box {
+    position: relative;
+    flex: 1;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #efefef;
+    border-radius: 5px;
+    padding: 1em;
+    display: flex;
+}
+
+.block_gamification-level-grid .level-name {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.block_gamification-level-grid .block_gamification-level-desc {
+    margin-top: 1em;
+    font-size: 12px;
+    line-height: 16px;
+    overflow: auto;
+}
+
+@media (min-width: 768px) {
+    .block_gamification-level-grid .block_gamification-level-boxed {
+        max-width: 50%;
+    }
+}
+
+/** Support inline input fields. */
+.form-control.block_gamification-form-control-inline {
+    min-width: 0;
+    width: auto;
+    display: inline;
+}
+
+/**
+ * CM rule.
+ */
+.block_gamification-cm-rule-widget .cm-selected {
+    display: none;
+}
+.block_gamification-cm-rule-widget.has-cm .cm-selection {
+    display: none;
+}
+.block_gamification-cm-rule-widget.has-cm .cm-selected {
+    display: inline;
+}
+
+/** RTL styles. */
+.dir-rtl .block-gamification-filters-wrapper .filter-rules {
+    margin-left: 0;
+    margin-right: 20px;
+}
+.dir-rtl .block-gamification-filters-wrapper .rule-rules {
+    margin-left: 0;
+    margin-right: 40px;
+}
+.dir-rtl .block-gamification-filters-wrapper .filter-rules > .rule > .rule-rules {
+    margin-left: 0;
+    margin-right: 20px;
+}
+.dir-rtl .block-gamification-filters-wrapper .filter-rules > .rule > .rule-definition {
+    padding-left: 0;
+    padding-right: 5px;
+}
+.dir-rtl .block-gamification-filters-wrapper .rule-rules .rule {
+    border-left: 0;
+    border-right: 1px dotted #ccc;
+    padding-left: 0;
+    padding-right: 15px;
+}
+.dir-rtl .block-gamification-filters-wrapper .rule-rules .rule::before {
+    right: 0;
+}
+.dir-rtl .block-gamification-filters-wrapper .rule-add::before,
+.dir-rtl .block-gamification-filters-wrapper .rule-rules .rule:last-child::before {
+    border-left: 0;
+    border-right: 1px dotted #ccc;
+    right: 0;
+}
+.block_gamification .after\:gamification-hidden::after {
+    content: var(--tw-content);
+    display: none;
+}
+.block_gamification .odd\:gamification-bg-gray-100:nth-child(odd) {
+    background-color: #f3f4f6;
+}
+.block_gamification .hover\:gamification-bg-gray-50:hover {
+    background-color: #f9fafb;
+}
+.block_gamification .hover\:gamification-text-gray-900:hover {
+    color: #111827;
+}
+.block_gamification .focus\:gamification-pointer-events-auto:focus {
+    pointer-events: auto;
+}
+.block_gamification .focus\:gamification-opacity-100:focus {
+    opacity: 1;
+}
+.block_gamification .gamification-group:hover .group-hover\:gamification-pointer-events-auto {
+    pointer-events: auto;
+}
+.block_gamification .gamification-group:hover .group-hover\:gamification-opacity-100 {
+    opacity: 1;
+}
+@media (hover: hover) and (pointer: fine) {
+
+    .block_gamification .supports-hover\:gamification-pointer-events-none {
+        pointer-events: none;
+    }
+
+    .block_gamification .supports-hover\:gamification-opacity-0 {
+        opacity: 0;
+    }
+}
+@media (min-width: 768px) {
+
+    .block_gamification .md\:gamification-order-none {
+        order: 0;
+    }
+
+    .block_gamification .md\:gamification-block {
+        display: block;
+    }
+
+    .block_gamification .md\:gamification-hidden {
+        display: none;
+    }
+
+    .block_gamification .md\:gamification-w-1\/3 {
+        width: 33.333333%;
+    }
+
+    .block_gamification .md\:gamification-flex-row {
+        flex-direction: row;
+    }
+
+    .block_gamification .md\:gamification-justify-end {
+        justify-content: flex-end;
+    }
+}
+@media (min-width: 1024px) {
+
+    .block_gamification .lg\:gamification-w-full {
+        width: 100%;
+    }
+
+    .block_gamification .lg\:gamification-w-36 {
+        width: 9rem;
+    }
+
+    .block_gamification .lg\:gamification-flex-row {
+        flex-direction: row;
+    }
+
+    .block_gamification .lg\:gamification-flex-col {
+        flex-direction: column;
+    }
+
+    .block_gamification .lg\:gamification-flex-nowrap {
+        flex-wrap: nowrap;
+    }
+
+    .block_gamification .lg\:gamification-gap-0 {
+        gap: 0px;
+    }
+
+    .block_gamification .lg\:gamification-border-b-0 {
+        border-bottom-width: 0px;
+    }
+
+    .block_gamification .lg\:gamification-pb-0 {
+        padding-bottom: 0px;
+    }
+
+    .block_gamification .lg\:gamification-space-y-1 > :not([hidden]) ~ :not([hidden]) {
+        margin-top: 0.25rem;
+        margin-bottom: 0;
+    }
+}
+.block_gamification .\[\&_a\]\:gamification-font-normal a {
+    font-weight: 400;
+}
+.block_gamification .\[\&_a\]\:gamification-underline a {
+    text-decoration-line: underline;
+}
+.block_gamification .\[\&\>\*\]\:gamification-mx-auto>* {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*new css*/
+.block_gamification .block-gamification-filters-group .filters-list .filter-add a ,
+.block_gamification .block-gamification-filters-group .filters-list .filter-rules .rule-add a{
+    color: #fff;
+    background-color: #0f6cbf;
+    border-color: #0f6cbf;
+    display: inline-flex;
+    align-items: center;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid transparent;
+    padding: 2px 10px;
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    border-radius: 0.5rem;
+    text-decoration: none;
+}
+.block_gamification .block-gamification-filters-group .block-gamification-filters-wrapper .filter {
+    border-radius: 10px;
+    box-shadow: 0px 3px 4px lightgrey;
+}
+.block_gamification .block-gamification-filters-group .filters-list .filter-rules .rule-definition .rule-delete  i.fa-trash {
+    background-color: #0f6cbf;
+    padding: 8px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.block-gamification-filters-wrapper .rule-type-ruleset > .rule-definition {
+    background-color: transparent;
+}

@@ -1,0 +1,133 @@
+{{!
+    This file is part of eAbyas
+    Copyright eAbyas Info Solutons Pvt Ltd, India
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 3 of the License, or
+    (at your option) any later version.
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+    
+    @author eabyas  <info@eabyas.in>
+}}
+{{!
+    @template block_gamification/block_view
+
+    This template renders the gamification view.
+
+    Example context (json):
+    {}
+}}
+<div class='w-100 pull-left lb_wrapper'>
+    <div class='w-100 pull-left lb_mdl_wrapper'>
+        <ul class='w-100 pull-left list-unstyled firstthreeranks'>
+            {{# three_ranks_data.1}}
+                <li class='col-12 col-xl-4 col-md-4 col-sm-4 p-0 pull-left topranks {{rankclass}} rank2'>
+                    <div class='text-center'>
+                        <div><span class='rankerpic'>{{{userpicture}}}<span class='ranks'>{{rank}}</span></span></div>
+                        <div class='namebanner'>
+                            <div class='rankername'>
+                                <span>{{username}}</span>
+                            </div>
+                            <div class='w-100 pull-left rankercoins'>
+                                <div class='rankercoinsvalue'>
+                                    <span class='coins ml-2'>{{points}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            {{/ three_ranks_data.1}}
+            {{# three_ranks_data.0}}
+                <li class='col-12 col-xl-4 col-md-4 col-sm-4 p-0 pull-left topranks {{rankclass}} {{^three_ranks_data.1}}singlerank{{/ three_ranks_data.1}} rank1'>
+                    <div class='text-center'>
+                        <div><span class='rankerpic'>{{{userpicture}}}<span class='ranks'>{{rank}}</span></span></div>
+                        <div class='namebanner'>
+                            <div class='rankername'>
+                                <span>{{username}}</span>
+                            </div>
+                            <div class='w-100 pull-left rankercoins'>
+                                <div class='rankercoinsvalue'>
+                                    <span class='coins ml-2'>{{points}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            {{/ three_ranks_data.0}}
+            {{# three_ranks_data.2}}
+                <li class='col-12 col-xl-4 col-md-4 col-sm-4 p-0 pull-left topranks {{rankclass}} rank3'>
+                    <div class='text-center'>
+                        <div><span class='rankerpic'>{{{userpicture}}}<span class='ranks'>{{rank}}</span></span></div>
+                        <div class='namebanner'>
+                            <div class='rankername'>
+                                <span>{{username}}</span>
+                            </div>
+                            <div class='w-100 pull-left rankercoins'>
+                                <div class='rankercoinsvalue'>
+                                    <span class='coins ml-2'>{{points}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            {{/ three_ranks_data.2}}
+        </ul>
+        {{#yourrank}}
+            <div class="rank-wrapper">
+                <span class="yourrank">{{# str}}yourrank, block_gamification{{/ str}}</span>
+                <div class="roundHex">{{overallrank}}</div>
+            </div> 
+        {{/yourrank}}
+    </div>
+    <div class="general_leaderboard">
+        <table class="generaltable course_lboard">
+            <thead>
+                <tr>
+                    <th>{# str}}employee, block_gamification{{/ str}}</th>
+                    <th>{# str}}rank, block_gamification{{/ str}}</th>
+                    <th>{# str}}points, block_gamification{{/ str}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{# leaderboarddata}}
+                <tr>
+                    <td>
+                        <div class="emp-flex-container">
+                            <span class='userpicture'>{{{userpicture}}}</span>
+                            <span class="user_username_cnt">    
+                                <span class='username'>{{username}}</span>
+                            </span>
+                        </div>
+                    </td>
+                    <td>
+                        <span class='rankClass rankClass{{rank}}'>{{rank}}</span>
+                    </td>
+                    <td>
+                        <span class='points'>{{points}}</span>
+                    </td>
+                </tr>
+                {{/ leaderboarddata}}
+                {{^ leaderboarddata}}
+                    <tr>
+                        <td colspan="3">
+                            <div class="text-center">No Data available</div>    
+                        </td>
+                    </tr>
+                {{/ leaderboarddata}}
+            </tbody>
+        </table>
+    </div>
+    {{# viewmore}}
+        <a class='btn viewmore_link' href='{{viewmore}}'>{{# str}} viewmore,block_gamification {{/ str}}</a>
+        <!-- <a class='btn viewmore_link' href='{{rooturl}}/blocks/gamification/dashboard.php?course={{courseid}}'>{{# str}} viewmore,block_gamification {{/ str}}</a> -->
+
+    {{/ viewmore}}
+</div>
+{{^ three_ranks_data.0}}
+    <div class="alert alert-info">{{# str}} nodata,block_gamification {{/ str}}</div>
+{{/ three_ranks_data.0}}

@@ -1,0 +1,10 @@
+{
+  "moodle-block_gamification-rulepicker": {
+    "requires": [
+        "base",
+        "node",
+        "handlebars",
+        "moodle-core-notification-dialogue"
+    ]
+  }
+}

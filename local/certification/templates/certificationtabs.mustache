@@ -1,0 +1,139 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{# creatacertification }}
+<ul class="course_extended_menu_list">
+    {{# reports.0}}
+         <li>
+                <div class="dropdown">
+                    <a href="#" tabindex="0" class=" dropdown-toggle icon-no-margin" id="dropdown-1" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" aria-controls="reportswitch" title="{{# str }} certification_reports,local_certification {{/ str }}">            
+                    <i class="icon fa fa-signal" aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right menu  align-tr-br" id="reportswitch" data-rel="menu-content" aria-labelledby="action-menu-toggle-1" role="menu" data-align="tr-br">
+                 {{#reports}}
+                   <div class="dropdown-divider" role="presentation">
+                     <span class="filler">&nbsp;</span></div>
+                        <a href="{{config.wwwroot}}/blocks/learnerscript/viewreport.php?id={{certificationid}}" class="dropdown-item menu-action" role="menuitem" data-title="{{name}}" aria-labelledby="{{name}}"target="_blank>
+                         <span class="menu-action-text">{{name}}</span>
+                     </a>
+                {{/reports}}
+               </div>     
+            </div>
+        </li>
+    {{/ reports.0}}
+    <li>
+        <div class="course_extended_menu_itemcontainer">
+            <a class="course_extended_menu_itemlink" href="#" data-action="tool_usertours/resetpagetour">
+                <i class='icon fa fa-question-circle' aria-hidden='true'></i>
+            </a>
+        </div>
+    </li>
+    {{#request_url }}
+        <li>
+            <div class = "coursebackup course_extended_menu_itemcontainer" >
+                <a href="{{ request_url }}"class="course_extended_menu_itemlink create_ilt" title="{{# str }} request,local_certification {{/ str }}">
+                    <i class="icon fa fa-share-square" aria-hidden="true"></i>
+                </a>
+            </div>
+        </li>
+    {{/request_url }}
+    {{#location_url }}
+        <li>
+        
+            <div class = "coursebackup course_extended_menu_itemcontainer" >
+                <a href="{{ location_url }}"class="course_extended_menu_itemlink create_ilt" title="{{# str }} location,local_certification {{/ str }}">
+                    <i class="icon fa fa-map-marker" aria-hidden="true"></i>
+                </a>
+            </div>
+        </li>
+    {{/location_url }}
+    {{# creatacertification }}
+        <li>
+            <div class = "coursebackup course_extended_menu_itemcontainer" >
+                <a class="course_extended_menu_itemlink create_ilt" title="{{# str }} create_certification, local_certification {{/ str }}" onclick="(function(e){ require('local_certification/ajaxforms').init({contextid:{{contextid}}, component:'local_certification', callback:'certification_form', form_status:0, plugintype: '{{plugintype}}', pluginname: '{{plugin_name}}', id:0, title: 'createcertification' }) })(event)">
+                    <span class="createicon">
+                        <i class="icon fa fa-graduation-cap"></i><i class="fa fa-plus createiconchild" aria-hidden="true"></i>
+                    </span>
+                </a>
+            </div>
+        </li>
+    {{/ creatacertification }} 
+</ul>
+{{/ creatacertification }}
+<div id="status_tabs">
+    <div class="crstatus_tabs_list p-15">
+        <ul class="nav nav-tabs certification_tabs" role="tablist">
+        
+        {{#all_tab}}    
+            <li class="nav-item certificationstatus" role="presentation" data-status = "-1">
+                <a class="active nav-link " data-toggle="tab" href="javascript:void(0)" aria-controls="allclasses" role="tab"  title="{{# str }} allclasses, local_certification {{/ str }}" ><i class="fa fa-list-ul certification_statusicon" ></i>{{# str }} allclasses, local_certification {{/ str }}</a>
+            </li>
+        {{/all_tab}}     
+        {{#new_tab}}    
+            <li class="nav-item certificationstatus" role="presentation" data-status = "0" >
+                <a class="nav-link" data-toggle="tab" href="javascript:void(0)"  aria-controls="newclasses" role="tab"  title="{{# str }} newclasses, local_certification {{/ str }}" ><i class="fa fa-bullhorn certification_statusicon" aria-hidden="true"></i>{{# str }} newclasses, local_certification {{/ str }}</a>
+            </li>
+        {{/new_tab}} 
+        {{#active_tab}}    
+            <li class="nav-item certificationstatus" role="presentation" data-status = "1">
+                <a class="nav-link" data-toggle="tab" href="javascript:void(0)" aria-controls="activeclasses" role="tab"  title="{{# str }} activeclasses, local_certification {{/ str }}" ><i class="fa fa-thumbs-o-up certification_statusicon" aria-hidden="true"></i>{{# str }} activeclasses, local_certification {{/ str }}</a>
+            </li>
+        {{/active_tab}}    
+        {{#hold_tab}}   
+            <li class="nav-item certificationstatus" role="presentation" data-status = "2" >
+                <a class="nav-link" data-toggle="tab" href="javascript:void(0)"  aria-controls="holdclasses" role="tab"  title="{{# str }} holdclasses, local_certification {{/ str }}" ><i class="fa fa-hand-o-up certification_statusicon" aria-hidden="true"></i>{{# str }} holdclasses, local_certification {{/ str }}</a>
+            </li>
+        {{/hold_tab}}  
+        {{#cancelled_tab}} 
+            <li class="nav-item certificationstatus" role="presentation" data-status = "3" >
+                <a class="nav-link" data-toggle="tab" href="javascript:void(0)" aria-controls="cancelledclasses" role="tab"  title="{{# str }} cancelledclasses, local_certification {{/ str }}" ><i class="fa fa-lock certification_statusicon" aria-hidden="true"></i>{{# str }} cancelledclasses, local_certification {{/ str }}</a>
+            </li>
+        {{/cancelled_tab}} 
+        {{#completed_tab}}     
+            <li class="nav-item certificationstatus" role="presentation" data-status = "4" >
+                <a class="nav-link" data-toggle="tab" href="javascript:void(0)" aria-controls="completedclasses" role="tab"  title="{{# str }} completedclasses, local_certification {{/ str }}" ><i class="fa fa-flag-o certification_statusicon" aria-hidden="true"></i>{{# str }} completedclasses, local_certification {{/ str }}</a>
+            </li>
+        {{/completed_tab}}     
+        </ul>
+    </div>
+    <div class="tab-content p-15">
+        <div class="tab-pane active" id="certificationcontent" >
+            {{# certificationtabslist }} {{{ certificationtabslist }}} {{/ certificationtabslist }}
+        </div>
+    </div>
+</div>
+{{#js}}
+$('.certificationstatus').click(function(){
+    if ($(this).find('a').hasClass('active')){
+        return true;
+    }
+   var certificationstatus = $(this).data('status')
+    $.ajax({
+        method: 'POST',
+        url: M.cfg.wwwroot + '/local/certification/ajax.php',
+        data: {
+            action: 'certificationsbystatus',
+            certificationstatus: certificationstatus
+        },
+        success:function(resp){
+            $('#certificationcontent').html(resp);
+            require(['local_certification/certification'], function(certification) {
+            certification.certificationDatatable({ 'certificationstatus' : certificationstatus });
+        });
+    }
+    });
+});
+{{/js}}

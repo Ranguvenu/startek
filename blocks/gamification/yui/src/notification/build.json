@@ -1,0 +1,10 @@
+{
+  "name": "moodle-block_gamification-notification",
+  "builds": {
+    "moodle-block_gamification-notification": {
+      "jsfiles": [
+        "notification.js"
+      ]
+    }
+  }
+}

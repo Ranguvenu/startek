@@ -1,0 +1,74 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    Manage competencies template.
+
+    Classes required for JS:
+
+    Data attibutes required for JS:
+    * data-action=add
+    * data-enhance=tree
+    * data-region=term
+    * data-region=selected-competency
+
+    Context variables required for this template:
+    * framework -
+    * competencies - array of objects containing id, shortname, idnumber, sortorder, parentid, competencyframeworkid, path
+    * canmanage - true if this user has permission to manage the competencies
+}}
+{{#frameworks}}
+<div data-region="managecompetencies">
+
+
+
+ <div class="row-fluid">
+        <div class="span6 col-lg-6">
+
+
+
+            <ul data-enhance="tree{{{framework.id}}}" class="competency-tree"  role="tree">
+<img class="icon " alt="Loading..." title="Loading..." src="http://localhost/openlms/theme/image.php/clean/core/1517323089/y/loading" />
+            </ul>
+           
+
+</div>
+</div>
+</div>  
+ {{/frameworks}}
+
+       
+// Initialise the JS.
+   {{#js}}
+require(['local_competency/tree', 'local_competency/competencytree', 'local_competency/competencyactions', 'jquery'],
+        function(ariatree, treeModel, actions, $) {
+
+       
+    treeModel.init({{{frameworks}}});
+
+
+
+
+
+
+});
+
+       {{/js}} 
+
+
+
+
+

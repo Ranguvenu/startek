@@ -1,0 +1,117 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template block_gamification/gamification-widget
+
+    gamification Widget.
+
+    Example context (json):
+    {
+    }
+}}
+<div>
+
+    {{#hasmanagernotices}}
+        {{#managernotices}}
+            {{{.}}}
+        {{/managernotices}}
+    {{/hasmanagernotices}}
+
+    {{#introhtml}}
+        <div class="introduction">{{{.}}}</div>
+    {{/introhtml}}
+
+    <div class="gamification-text-xl gamification-text-center gamification-font-bold">{{{levelnamehtml}}}</div>
+
+    <div>{{{badgehtml}}}</div>
+
+    <div class="gamification-mt-6">
+
+        <div class="gamification-flex gamification-gap-3">
+            <div class="gamification-flex-1 gamification-overflow-hidden">
+
+                <div class="gamification-flex gamification-flex-wrap gamification-items-end gamification-gap-1 gamification-max-w-full">
+                    <div class="gamification-text-xs gamification-uppercase gamification-text-gray-600">{{#str}}total, block_gamification{{/str}}</div>
+                    <div class="gamification-bg-gray-200 gamification-rounded-full gamification-px-3 gamification-py-1 gamification-overflow-hidden">
+                        <div class="gamification-max-w-full gamification-text-xl gamification-leading-none gamification-truncate" title="{{gamification}}">{{{gamificationhtml}}}</div>
+                    </div>
+                </div>
+
+                <div class="gamification-mt-2">
+                    {{{progressbarhtml}}}
+                </div>
+
+            </div>
+
+            {{#shownextlevel}}
+            <div class="gamification-self-end">
+                {{{nextbadgehtml}}}
+            </div>
+            {{/shownextlevel}}
+
+        </div>
+
+    </div>
+
+    {{#showrankingsnapshot}}
+        <div class="gamification-mt-6">
+            <h5 class="block_gamification-heading">{{#str}}ranking, block_gamification{{/str}}</h5>
+            {{#hasrankingsnapshot}}
+            {{#showranksinrankingsnapshot}}
+            <div class="gamification-flex gamification-gap-2 gamification-items-center">
+                {{#rankingsnapshot}}
+                    <div class="gamification-flex gamification-flex-col gamification-items-center {{^highlight}}gamification-flex-1{{/highlight}}{{#highlight}}gamification-flex-2{{/highlight}} gamification-overflow-hidden">
+                        <div class="{{^highlight}}gamification-mt-4{{/highlight}}{{#highlight}}gamification-text-xl gamification-bg-gray-200 gamification-rounded-full gamification-px-2 gamification-py-1 gamification-min-w-[3rem] {{/highlight}} gamification-max-w-full gamification-truncate gamification-text-center gamification-leading-none gamification-mb-1" aria-labelledby="block_gamification-ranking-snapshot-rank-{{uniqid}}-{{idx}}">
+                            {{#isplaceholder}}-{{/isplaceholder}}
+                            {{^isplaceholder}}{{{rankhtml}}}{{/isplaceholder}}
+                        </div>
+                    </div>
+                {{/rankingsnapshot}}
+            </div>
+            {{/showranksinrankingsnapshot}}
+            <div class="gamification-flex gamification-gap-2 gamification-items-center">
+                {{#rankingsnapshot}}
+                    <div class="gamification-flex gamification-flex-col gamification-items-center {{^highlight}}gamification-mt-1 gamification-flex-1{{/highlight}}{{#highlight}}gamification-flex-2{{/highlight}} gamification-overflow-hidden" id="block_gamification-ranking-snapshot-rank-{{uniqid}}-{{idx}}">
+                        <img src="{{picurl}}" alt="{{name}}" class="gamification-block gamification-w-full gamification-rounded-full {{^highlight}} gamification-max-w-[4rem] gamification-border-gray-200 {{/highlight}}{{#highlight}} gamification-max-w-[6rem] gamification-border-sky-400 {{/highlight}} gamification-border-solid gamification-border-2 gamification-p-0.5">
+                        {{#showdiffsinrankingsnapshot}}
+                        {{^highlight}}
+                        <div class="gamification-text-xxs gamification-text-gray-500 gamification-mt-1" title="{{diff}}">
+                            {{#hasdiff}}{{{diff}}}{{/hasdiff}}{{^hasdiff}}&nbsp;{{/hasdiff}}
+                        </div>
+                        {{/highlight}}
+                        {{/showdiffsinrankingsnapshot}}
+                    </div>
+                {{/rankingsnapshot}}
+            </div>
+            {{/hasrankingsnapshot}}
+
+        </div>
+    {{/showrankingsnapshot}}
+
+    {{#showrecentactivity}}
+        <div class="gamification-mt-6">
+            {{{recentactivityhtml}}}
+        </div>
+    {{/showrecentactivity}}
+
+    {{#showactions}}
+        <div class="gamification-mt-6">
+            {{{actionshtml}}}
+        </div>
+    {{/showactions}}
+
+</div>

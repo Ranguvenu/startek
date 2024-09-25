@@ -1,0 +1,95 @@
+<?php
+$string['pluginname']='Certificados';
+$string['delconfirm']='¿Realmente quieres eliminar?';
+$string['no_permissions'] = "<div class='alert alert-danger'>
+                                No tiene permisos.
+                            </div>";
+$string['certificates:manage']='Administrar certificado';
+$string['certificates:view']='Ver Certificado';
+$string['certificates:create']='Crear certificado';
+$string['certificates:edit']='Editar certificado';
+$string['certificates:delete']='Eliminar certificado';
+$string['certificates:mapping']='Certificado de mapeo';
+$string['manage_certificates']='Administrar certificados';
+
+//$string['manage_certificates'] = 'Manage Certificates';
+$string['editcertificate']='Editar certificado';
+//$string['manage_certificates'] = 'Manage Certificates';
+
+$string['manage_certificates']='Administrar certificados';
+$string['width']='Anchura';
+$string['width_help']='Este es el ancho del certificado PDF en mm. Como referencia, una hoja de papel A4 mide 210 mm de ancho y una carta mide 216 mm de ancho.';
+$string['height']='Altura';
+$string['height_help']='Esta es la altura del certificado PDF en mm. Como referencia, una hoja de papel A4 tiene 297 mm de alto y una carta tiene 279 mm de alto.';
+$string['leftmargin']='Margen izquierdo';
+$string['leftmargin_help']='Este es el margen izquierdo del PDF del certificado en mm.';
+$string['rightmargin']='Margen derecho';
+$string['rightmargin_help']='Este es el margen derecho del PDF del certificado en mm.';
+$string['editcertificate']='Editar certificado  "<b>{$a}</b>" ';
+$string['capacity']='Capacidad';
+$string['addelement']='Agregar elemento';
+$string['savechangespreview']='Guardar cambios y obtener una vista previa';
+$string['certificatename']='Nombre del certificado';
+$string['certificatecode']='Código de certificado';
+$string['costcenter']='Organización';
+$string['elementname']='Nombre del elemento';
+$string['elementname_help']='Este será el nombre utilizado para identificar este elemento al editar un certificado. Nota: esto no se mostrará en el PDF.';
+$string['editelement']='Editar elemento';
+$string['page']='Página {$a}';
+$string['elements']='Elementos';
+$string['name']='Nombre';
+$string['type']='Tipo';
+$string['rearrangeelements']='Reubicar elementos / vista previa del certificado';
+$string['cert_preview']='Diseño de certificado';
+$string['saveandclose']='Guardar y cerrar';
+$string['saveandcontinue']='Guardar y continuar';
+$string['rearrangeelementsheading']='Arrastre y suelte elementos para cambiar su ubicación en el certificado.';
+$string['deleteconfirm']='Eliminar confirmación';
+
+$string['deleteelementconfirm']='Estás seguro que quieres eliminar esto <b>{$a}</b>" ¿Elemento?';
+$string['editcertificate']='Editar certificado';
+$string['posx']='Posición X';
+$string['posy']='Posición Y';
+$string['elementwidth']='Anchura';
+
+$string['elementwidth_help'] = 'Specify the width of the element - \'0\' means that there is no width constraint.';
+$string['elementwidth_help']='Especifique el ancho del elemento - \'0\' significa que no hay restricción de ancho.';
+
+$string['refpoint']='Ubicación del punto de referencia';
+$string['refpoint_help']='El punto de referencia es la ubicación de un elemento a partir del cual se determinan sus coordenadas xey. Está indicado por el \'+\' que aparece en el centro o en las esquinas del elemento.';
+$string['topleft']='Arriba a la izquierda';
+$string['topcenter']='Centrar';
+$string['topright']='Parte superior derecha';
+$string['noimage']='Sin imágen';
+$string['uploadimage']='Cargar imagen';
+$string['deleteconfirm']='Eliminar confirmación';
+$string['deleteconfirm_cert']='Estás seguro que quieres eliminar esto "<b>{$a}</b>" ¿Certificado?';
+$string['elements_help']='Esta es la lista de elementos que se mostrarán en el certificado.Tenga en cuenta: Los elementos se representan en este orden. El orden se puede cambiar usando las flechas junto a cada elemento.';
+$string['create_cert']='Crear certificado';
+$string['manage_certificates']='Plantillas de certificado';
+$string['no_records']='Información no disponible';
+$string['font']='Fuente';
+$string['font_help']='La fuente utilizada al generar este elemento.';
+$string['fontcolour']='Color';
+$string['fontcolour_help']='El color de la fuente.';
+$string['fontsize']='Talla';
+$string['fontsize_help']='El tamaño de la fuente en puntos.';
+$string['certificate']='Certificado';
+$string['download_certificate']='Descargar certificado';
+$string['unableto_download_msg']='Aún así, no completaste esto {$a}, entonces no puedes descargar el certificado';
+$string['completed']='Completado';
+$string['notcompleted']='no completado';
+$string['certificatesize']='Tamaño del certificado';
+$string['a4_portrait']='Retrato A4';
+$string['a4_landscape']='A4 horizontal';
+$string['letter_portrait']='Retrato de carta';
+$string['letter_landscape']='Paisaje de letras';
+$string['cantdelete_certificate']='Ya hay un par de módulos asignados a este certificado, por lo que no puede eliminarlo.';
+$string['editcertification']='Editar certificado';
+$string['certificatename']='Nombre del certificado';
+$string['notyourorgcertificate_msg']='Ha intentado ver este certificado no pertenece a su organización';
+$string['certificates:map']='Mapa de certificados';
+$string['inprogress_certification']='Certificación en curso';
+$string['completed_certification']='Certificación completada';
+$string['certificatenamecreated']='El usuario con id {$a->firstname} ({$a->userid}) ha creado el certificado con id {$a->certification_name} ({$a->objectid})';
+$string['certificatecreated']='El usuario con id {$a->firstname} ({$a->userid}) ha creado el certificado con id ({$a->objectid})';

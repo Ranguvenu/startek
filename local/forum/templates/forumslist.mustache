@@ -1,0 +1,74 @@
+<div class="w-100 pull-left forumdata_container">
+    <div class="w-100 pull-left p-10">
+        <div class="w-100 pull-left top_content">
+            <div class="text-center pr-0">
+                <span class="discussicon_container"><img src ="{{ discussionicon }}"/></span>
+            </div>
+            <div class="col-md-10 col-sm-10 col-10 pull-left pl-1 forumname">{{{ forumlink }}}</div>
+            {{# actions}}
+            <div class="pull-right showoptions{{forumid}} actionicons">
+                <span  class="showoptions" data-action="showoptions{{forumid}}" onmouseenter="(function(e){ require('theme_epsilon/quickactions').quickactionsCall({ selector:'showoptions{{forumid}}' }) })(event)" onmouseleave="(function(e){require('theme_epsilon/quickactions').quickactionsCall({ selector:'showoptions{{forumid}}' }) })(event)">
+                    <i class="fa fa-ellipsis-h fa-fw " aria-hidden="true"></i>
+                </span>
+		        <ul class="options_container" id="showoptions{{forumid}}">
+		            {{# delete }}
+                    <li>
+		                <a href="javascript:void(0)" title = "{{# str}} delete {{/ str}}" onclick="(function(e){
+		                require('local_forum/newforum').deleteforum({{forumid}}) })(event)">
+		                <i class="fa fa-trash fa-fw" aria-hidden="true" title="" aria-label="Delete"></i></a>
+                    </li>
+		            {{/ delete}}
+
+		            {{# edit}}
+                    <li>
+		                <a href="javascript:void(0)" title = "{{# str}} edit {{/ str}}" onclick="(function(e){require('local_forum/newforum').init({selector:'createforummodal', context:{{ contextid }}, id:{{ forumid }}, form_status:0})})(event)">
+		                <i class="fa fa-pencil fa-fw" aria-hidden="true" aria-label="Edit"></i></a>
+                    </li>
+		            {{/ edit }}
+		        </ul>
+			</div>
+            {{/actions}}
+
+            <!--<div class="col-md-1"><span class="actions_icon pull-right">{{{actions}}}</span></div>-->
+        </div>
+        <div class="w-full pull-left pl-15 pr-15">
+            <div class="description m-1">
+            {{# description}}
+                <p>{{{ description }}}</p>
+            {{/ description}}
+            {{^ description}}
+                <p class="alert alert-info text-center">{{#str}}nocoursedesc, local_courses{{/str}}</p>
+            {{/ description}}
+            </div>
+        </div>
+    </div>
+    <div class="w-full pull-left bottom_container">
+        <div class="col-md-3 col-sm-6 col-6 pull-left bottom_content">
+            <div class="col-md-12 pb-1 pl-0 pr-0">
+                <div class="pull-left mt-1 mb-1 mr-10 pr-0 pl-0">
+                {{{ forumimage }}}
+                </div>
+                <div class="mt-1 mb-1 creator_info">
+                    <div class="mb-1">{{#str}}forumslistpostedby, local_forum{{/str}}</div>
+                    <div>
+                        <!--<a href="{{ configpath }}/local/users/profile.php?id= {{ forumuserid }}&amp;course=1">{{ forumuser }}</a> 
+                        <a href="javascript:void(0)">{{ forumuser }}</a>-->
+                        <span class="username">{{ forumuser }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-6 pull-left pt-15 pb-15 bottom_content">
+            <div class="col-12 text-center discussion_count">
+                <div class="col-md-4 col-4 pull-left pr-0 disc_link">{{{ discussionlink }}}</div>
+                <div class="col-md-4 col-4 pull-left pl-1 disc_str">{{#str}}forumslisttopics, local_forum{{/str}}</div>
+            </div>
+        </div>
+         <div class="col-md-3 col-sm-6 col-6 pull-left pt-15 pb-15 bottom_content text-center">
+            <div class="emaildigest">{{{ emaildigest }}}</div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-6 pull-left text-center bottom_content subsribe_container">
+            <div class="subscribe">{{{ subscribe }}}</div>
+        </div>
+    </div>
+</div>

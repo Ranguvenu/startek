@@ -1,0 +1,79 @@
+{{!
+    This file is part of eAbyas
+    Copyright eAbyas Info Solutons Pvt Ltd, India
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 3 of the License, or
+    (at your option) any later version.
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+    @author eabyas  <info@eabyas.in>
+}}
+{{#response}}
+    {{^records}}
+    {{#nodata}}
+        <div class = 'w-100 pull-left alert alert-info'>{{nodata}}</div>
+    {{/nodata}}
+    {{/records}}
+    {{#viewtypeCard}}
+        <ul class='card-wrap m-0 p-0 {{#records}}{{#action}}actions{{/action}}{{/records}}' data-region='paginate-list'>
+            {{#records}}
+                    <li class='text-truncate p_5 {{cardClass}} pull-left'>
+                      <div id="course-{{courseid}}" class="crse-s elearning crse-{{coursenums}}">
+                        <div class="crse-s-image">
+                            <img src="{{ imageurl }}" alt="{{ title }}">
+                            <span class="{{^iconurl}}novisible{{/iconurl}} crse-icon crse-icon-course-type" style="background-image: url({{ iconurl }})">
+                                
+                            </span>
+                            <span class="{{^coursetype}}novisible{{/coursetype}}crse-s-type crse-s-type">{{ coursetype }}</span>
+                        </div>
+
+                        <div class="crse-s-title">
+                            <h4><a href="{{ url }}" title="{{ title }}">{{ title }}</a></h4>
+                        </div>
+
+                        <div class="crse-s-desc">
+                            {{{ description }}}
+                        </div>
+
+                        <div class="crse-s-meta row">
+                            {{#duration }}
+                            <div class="col-md-5">
+                                <i class="fa fa-clock-o"></i> {{# str }} duration, block_courselister {{/ str }}: {{ duration }}
+                            </div>
+                            {{/duration }}
+                            <br/>
+                            {{#modules }}
+                              <div class="col-md-4">
+                                  <i class="fa fa-window-restore"></i> {{# str }} managemodules, block_courselister {{/ str }}: {{ modules }}
+                              </div>
+                            {{/modules }}
+                            {{#browseevidencescourse}}
+                              <div class="col-md-2">
+                                {{{browseevidencescourse}}}
+                              </div>
+                            {{/browseevidencescourse}}
+                            {{#selfcompletioncourse}}
+                              <div class="col-md-1">
+                                {{{selfcompletioncourse}}}
+                              </div>
+                            {{/selfcompletioncourse}}
+                        </div>
+
+                        <div class="crse-s-meta row-fluid {{^completebefore}}novisible{{/completebefore}}">
+                            <i class="fa fa-calendar"></i> {{# str }} completebefore, block_courselister {{/ str }}: {{completebefore}}
+                              
+                        </div>
+                        
+                        <br />
+                      </div>
+                    </li>
+            {{/records}}
+        </ul>
+    {{/viewtypeCard}}
+{{/response}}

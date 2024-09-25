@@ -1,0 +1,76 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template local_courses/catalog
+
+    This template renders the courses content for the courses plugin.
+
+    Example context (json):
+    {}
+}}
+{{{select}}}
+{{# badgetypes}}
+<div class="crstatus_tabs_list pl_15 pr_15 pb_15">
+<ul class="nav nav-tabs gamification_tabs w-full">
+    {{# coins}}
+    <li class="nav-item badgetype {{badgetabclass}}" data-badgetype="coins" data-accountid={{accountid}}>
+        <a class="nav-link gamificationtab active" href="javascript:void(0)">{{coins}}</a>
+    </li>
+    {{/ coins}}
+    {{# levels}}
+    <li class="nav-item badgetype {{badgetabclass}}" data-badgetype="levels" data-accountid={{accountid}}>
+        <a class="nav-link gamificationtab {{^ coins}}active{{/ coins}}" href="javascript:void(0)">{{levels}}</a>
+    </li>
+    {{/ levels}}
+    {{# course_completions}}
+    <li class="nav-item badgetype {{badgetabclass}}" data-badgetype="course_completions" data-accountid={{accountid}}>
+        <a class="nav-link gamificationtab {{^ levels}}active{{/ levels}}" href="javascript:void(0)">{{course_completions}}</a>
+    </li>
+    {{/ course_completions}}
+    {{# peer_recog}}
+    <li class="nav-item badgetype {{badgetabclass}}" data-badgetype="peer_recog" data-accountid={{accountid}}>
+        <a class="nav-link gamificationtab {{^ course_completions}}active{{/ course_completions}}" href="javascript:void(0)">{{peer_recog}}</a>
+    </li>
+    {{/ peer_recog}}
+</ul>
+</div>
+{{/ badgetypes}}
+<div class="mt-2 badgecontainer" id="badge_content">
+    {{{badge_content}}}
+</div>
+{{#js}}
+    require(["jquery", "local_costcenter/jquery.dataTables"], function($, dataTable) {
+        $(document).on('click', '.badgetype', function(){
+            if(!$(this).children('a').hasClass('active')){
+                $('.gamificationtab').removeClass('active');
+                $(this).children('a').addClass('active');
+                var badgetype = $(this).data('badgetype');
+                var accountid = $(this).data('accountid');
+                $.ajax({
+                    method: "POST",
+                    dataType: "json",
+                    url:M.cfg.wwwroot+"/blocks/gamification/customajax.php",
+                    data: {action: "get_badge_table", accountid: accountid, type: badgetype},
+                    success: function(data){
+                        $('#badge_content').html(data);
+                    }
+                });
+            }
+            
+        });
+    });
+{{/js}}

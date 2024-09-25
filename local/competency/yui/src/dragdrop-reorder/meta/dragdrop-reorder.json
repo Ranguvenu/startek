@@ -1,0 +1,7 @@
+{
+    "moodle-local_competency-dragdrop-reorder": {
+        "requires": [
+            "moodle-core-dragdrop"
+        ]
+    }
+}

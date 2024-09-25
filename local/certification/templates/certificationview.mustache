@@ -1,0 +1,133 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{# certification}}
+<div class="classview_topcontainer w-full pull-left">
+    <div class="col-12 pull-left classview_topcontent pl-0">
+        <div class="col-12 pull-left classview_topcontent_right">
+            <h3>{{ name }}</h3>
+            <div class="description">
+                {{# isdescription}}
+                    {{^ descriptionstring}}
+                        <p class="text-muted">{{{ description }}}</p>
+                    {{/ descriptionstring }}
+                    {{# descriptionstring}}
+                        <p class="text-muted">{{ descriptionstring }} ...</p>
+                    {{/ descriptionstring }}
+                {{/ isdescription}}
+                {{^ isdescription }}
+                    <p class="alert alert-info text-center">{{#str}}nocoursedesc, local_courses{{/str}}</p>
+                {{/ isdescription }}
+            </div>
+            <div class="col-12 pull-left topcontent_right_middle p-0">
+                <div class="col-md-6 col-sm-12 col-12 pull-left classdetails_left">
+                 	<p class="contentlist"><span class="lable_name">Scheduled</span> <span class="text-muted">: </span>
+					<span class="text-muted">&nbsp;
+					{{#startdate}}
+						{{#userdate}} {{startdate}}, %d %b' %y {{/userdate}}
+					{{/startdate}}
+					{{^startdate}}
+					  {{#enddate}}
+					     N/A
+					  {{/enddate}}
+					{{/startdate}}
+					{{#enddate}}
+						&nbsp;-&nbsp;{{#userdate}} {{enddate}}, %d %b' %y {{/userdate}}
+					{{/enddate}}
+					{{^enddate}}
+						{{#startdate}}
+						   &nbsp;-&nbsp;N/A
+						{{/startdate}}
+					{{/enddate}}
+					{{^startdate}}
+						{{^enddate}}
+						   N/A
+						{{/enddate}}
+					{{/startdate}}
+					</span></p>
+                     <!--<p class="contentlist"><span class="lable_name">{{#str}}certificationcode, local_certification{{/str}}</span> <span class="text-muted">: </span><span class="text-muted">&nbsp;{{ shortname }}</span></p>-->
+                    <p class="contentlist"><span class="lable_name ">{{#str}}strcertificationlocation, local_certification{{/str}}</span> <span class="text-muted">: </span><span class="text-muted">&nbsp; {{# certificationlocation }} {{ certificationlocation }} {{/ certificationlocation }} {{^ certificationlocation }} N/A {{/ certificationlocation }}</span></p>
+                    <p class="contentlist"><span class="lable_name">{{#str}}strcertificationdepartment, local_certification{{/str}}</span> <span class="text-muted">: </span><span class="text-muted">&nbsp;{{# certificationdepartment }} {{ certificationdepartment }} {{/ certificationdepartment }}{{^ certificationdepartment }} N/A {{/ certificationdepartment }}</span></p>
+                    <!--<p class="contentlist"><span class="lable_name">Employee Location</span> <span class="text-muted">: </span><span class="text-muted">&nbsp;{{# emplocation }} {{ emplocation }} {{/ emplocation }}{{^ emplocation }} N/A {{/ emplocation }}</span></p>-->
+                </div>
+                <div class="col-md-6 col-sm-12 col-12 pull-left classdetails_right">
+                    
+                      <h5>{{#str}}strcertificationseatsallowcation, local_certification{{/str}}</h5>
+                      <p>Total&nbsp;Seats&nbsp;:&nbsp;{{totalseats}}</p>
+                      <!--<p>Allocated&nbsp;Seats&nbsp;:&nbsp;{{allocatedseats}}</p>-->
+                   
+                </div>
+            </div>
+            <div class="col-12 pull-left topcontent_right_bottom p-0 mt-10">
+                <h6><b>Trainers</b></h6>
+                {{# trainers}}
+                <div class="col-md-4 col-sm-12 col-12 pull-left trainers_scroll">
+                    <div class="col-md-3 col-sm-3 col-3 pull-left p-0">{{{ certificationtrainerpic }}}</div>
+                    <div class="col-md-9 col-sm-9 col-9 pull-left trainers_scroll_right"><span class="text-muted">{{ trainername }}</span>
+                        <!--<span class="text-muted">{{ trainerdesignation }}</span>-->
+                        <span class="text-muted">{{ traineremail }}</span>
+                    </div>
+                </div>
+                {{/ trainers }}
+                {{^ trainers}}
+                    <div class="w-full pull-left alert alert-info">{{#str}}strcertificationnotrainersassined, local_certification{{/str}}</div>
+                {{/ trainers}}
+                {{# trainerpagination }}
+                <span><i class="fa fa-angle-left fa-2x trainer-prev" aria-hidden="true"></i></span>
+                <span><i class="fa fa-angle-right fa-2x trainer-next" aria-hidden="true"></i></span>
+                {{/ trainerpagination }}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mt-15 w-full pull-left">
+    <div class="w-100 pull-left p-0 mt-15">
+        <h3 class="watnext_head pb-15">{{#str}}strcertificationwats, local_certification{{/str}}</h3>
+    </div>
+    <div class="course_buttons col-12 pull-left pt-15 pb-15">
+        <div class="col-md-6 col-sm-9 col-9 pull-left">{{#str}}strcertificationviewwhatwewant, local_certification{{/str}} <b>{{#str}}strcertificationcreatesession, local_certification{{/str}}</b></div>
+        <div class="col-md-6 col-sm-3 col-3 pull-left pr-0">
+            <a href="javascript:void(0)" onclick="(function(e){ require('local_certification/ajaxforms').init({contextid:{{ contextid }}, component:'local_certification', callback:'session_form', form_status:0, plugintype: 'local_certification', pluginname:'session', id:0, ctid: {{ certificationid }}, }) })(event)"><button class="btn btn-primary">{{#str}}strcertificationgoto, local_certification{{/str}}</button></a>
+        </div>
+    </div>
+    <div class="course_buttons col-12 pull-left pt-15 pb-15">
+         <div class="col-md-6 col-sm-9 col-9 pull-left">{{#str}}strcertificationviewwhatwewant, local_certification{{/str}} <b>{{#str}}strcertificationaddcource, local_certification{{/str}}</b></div>
+         <div class="col-md-6 col-sm-3 col-3 pull-left pr-0">
+            <a href="javascript:void(0)" onclick="(function(e){ require('local_certification/ajaxforms').init({contextid:{{ contextid }}, component:'local_certification', callback:'course_form', form_status:0, plugintype: 'local_certification', pluginname: 'course', id:0, ctid: {{ certificationid }} }) })(event)"><button class="btn btn-primary">{{#str}}strcertificationgoto, local_certification{{/str}}</button></a>
+        </div>
+    </div>
+	{{#linkpath}}
+	 <div class="course_buttons col-12 pull-left pt-15 pb-15">
+         <div class="col-md-6 col-sm-12 col-12 pull-left"></div>
+         <div class="col-md-2 col-sm-12 col-12 pr-0 pull-right">
+            <a href='{{ linkpath }}' ><button class="btn btn-primary">{{#str}}strcertificationcontinue, local_certification{{/str}}</button></a>
+        </div>
+    </div>
+  {{/linkpath}}
+</div>
+{{#js}}
+    $( document ).ready(function() {
+        $(".trainer-next, .trainer-prev").click(function () {
+            var div = $(".trainers_scroll")[0];
+            var html = $(div).html();
+            $(div).remove();
+            $(".topcontent_right_bottom").append("<div class=\"col-md-4 trainers_scroll\">" + html + "</div>");
+        });
+    });
+
+{{/js}}
+{{/ certification}}

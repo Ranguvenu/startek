@@ -1,0 +1,116 @@
+/*@import url(http://fonts.googleapis.com/css?family=Satisfy);*/
+.badgetooltip {
+	display: block;
+    position: relative;
+    z-index: 999;
+    float: none;
+    margin: auto;
+    max-width: 80px;
+    min-width: 80px;
+}
+
+/* Gap filler */
+.badgetooltip::after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 20px;
+	bottom: 100%;
+	left: 50%;
+	pointer-events: none;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+}
+
+.badgetooltip:hover::after {
+	pointer-events: auto;
+}
+
+/* Tooltip */
+
+.badgetooltip-content {
+	position: absolute;
+	z-index: 9999;
+	width: 300px;
+	left: 0%;
+	bottom: calc(100% + 10px);
+	bottom: -webkit-calc(100% + 10px);
+	bottom: -moz-calc(100% + 10px);
+	font-size: 20px;
+	line-height: 1.4;
+	text-align: center;
+	font-weight: 400;
+	color: #fffaf0;
+	background: transparent;
+	opacity: 0;
+	margin: 0px;
+	cursor: default;
+	pointer-events: none;
+	font-family: 'Satisfy', cursive;
+	-webkit-font-smoothing: antialiased;
+	-webkit-transition: opacity 0.3s 0.3s;
+	transition: opacity 0.3s 0.3s;
+}
+
+.badgetooltip:hover .badgetooltip-content {
+	opacity: 1;
+	pointer-events: auto;
+	-webkit-transition-delay: 0s;
+	transition-delay: 0s;
+}
+
+.badgetooltip-content span {
+	display: block;
+}
+
+.badgetooltip-text {
+	overflow: hidden;
+	-webkit-transform: scale3d(0,1,1);
+	transform: scale3d(0,1,1);
+	-webkit-transition: -webkit-transform 0.3s 0.3s;
+	transition: transform 0.3s 0.3s;
+}
+
+.badgetooltip:hover .badgetooltip-text {
+	-webkit-transition-delay: 0s;
+	transition-delay: 0s;
+	-webkit-transform: scale3d(1,1,1);
+	transform: scale3d(1,1,1);
+	border-radius: 15px;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+}
+
+.badgetooltip-inner {
+	/*background: rgba(85,61,61,0.95);*/
+	background: rgba(150, 204, 216, 0.95);
+	padding: 15px;
+	-webkit-transform: translate3d(0,100%,0);
+	transform: translate3d(0,100%,0);
+	webkit-transition: -webkit-transform 0.3s;
+	transition: transform 0.3s;
+}
+
+.badgetooltip:hover .badgetooltip-inner {
+	-webkit-transition-delay: 0.3s;
+	transition-delay: 0.3s;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+/* Arrow */
+
+.badgetooltip-content::after {
+	content: '';
+    bottom: -20px;
+    left: 0%;
+    border: solid transparent;
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: transparent;
+    border-top-color: #9acdd9;
+    border-width: 10px;
+    margin-left: 30px;
+}

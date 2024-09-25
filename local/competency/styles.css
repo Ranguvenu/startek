@@ -1,0 +1,46 @@
+ul.competency-tree li {cursor: pointer;list-style-type: none;}
+.local-competency-list{margin :10px 0px;list-style: none;	}
+#page-local-competency-viewcompetencies .card-block{padding: 13px !important;}
+/* user competency starts */
+#page-local-competency-viewcompetencies div [data-region='coursecompetencyactivities'] li.list-inline-item.local-competency-list {width: 48%;float: left;min-height: 30px;vertical-align: middle;}
+.competency-tree.advanced {width: 100%;float: left;}
+.competency-tree.advanced .compfwlist{width: 100%;float: left;}
+.compfwlist img:first-child{background-color: #0077b6;float: left;vertical-align: middle;padding: 8px 8px;margin: 0px 0px 0px 0px;height: 35px;width: 10%;border-radius: 8px 0px 0px 0px;}
+.compfwname{background-color: #0077b6;color: #fff;padding: 4px;width: 90%;font-size: 18px;float: left;border-radius: 0px 8px 0px 0px;}
+.complist{width: 100%;float: left;background-color: #f2f2f2;padding: 5px 5px;font-size: 15px;line-height: 18px;border-radius: 0px 0px 8px 8px;}
+.comp_middle_container .local-competency-list .card-title{background-color: #20b158;color: #fff;border-radius: 8px 8px 0px 0px;padding: 10px;margin-bottom: 0px;}
+.local-competency-list .card-title h6 {margin-bottom: 0;}
+.nocompetency{background-color: #f2f2f2;width: 100%;float: left;padding: 10px 20px;border-radius: 0px 0px 8px 8px;}
+.complist li img {background: none!important;float: initial !important;height: initial !important;}
+#page-local-competency-viewcompetencies table{border:none;}
+#page-local-competency-viewcompetencies table tr{background: none;}
+.comp_right_container .local-competency-list .card-title{background-color: #0077b6;color: #fff;border-radius: 8px 8px 0px 0px;padding: 10px;margin-bottom: 0px;}
+.sub_complist .sub_complist_listitem:before {content: "\f178";font-family: 'Font Awesome 6 Free';     font-weight: 900;color: #777;padding-right: 5px;}
+.comp_courses_list {padding-left: 10px;padding: 5px 0px 5px 10px;}
+div [data-region='courselistview2']{background-color: #f2f2f2;padding: 10px 6px;border-radius: 0px 0px 8px 8px;}
+div [data-region='courseactivitiesview2']{background-color: #f2f2f2;padding: 10px 6px;border-radius: 0px 0px 8px 8px;}
+.comp_courses_list:before{content: "\f178";font-family: 'Font Awesome 6 Free';     font-weight: 900;color: #777;padding-right: 5px;}
+tbody.drag-parentnode tr td {padding-top: 0px;padding-bottom: 0px;}
+tbody.drag-parentnode tr:first-child td p {margin-bottom: 0px;font-size: 18px;font-weight: 300;}
+.assigned_activities{font-size: 16px;padding: 2px 2px 5px 2px;margin-bottom: 0px;border-bottom: 1px solid #ccc;text-align: center;}
+/* user competency ends */
+#page-admin-tool-lp-competencies .competency-tree{width: 100%;float: left;margin-top: 1rem;border: none;border-top: none;box-shadow: none;}
+#page-admin-tool-lp-competencies div [data-region='managecompetencies'] {width: 100%;float: left;}
+#page-admin-tool-lp-competencies div [data-region='managecompetencies'] h2{float: right;}
+#page-admin-tool-lp-competencies div [data-region='managecompetencies'] .row-fluid .span6.card.col-lg-6 {margin-top: 4rem;border: none;}
+#page-admin-tool-lp-competencies .competency-tree li:first-child img {background-color: #0077b6;float: left;vertical-align: middle;padding: 8px 8px;margin: 0px;height: 35px;width: 10%;border-radius: 8px 0 0 0;}
+#page-admin-tool-lp-competencies .competency-tree li {width: 100%;float: left;}
+#page-admin-tool-lp-competencies .competency-tree li:first-child > ul li img {background: none!important;float: initial!important;height: initial!important;width: initial;}
+#page-admin-tool-lp-competencies .competency-tree li:first-child span{background-color: #0077b6;
+    color: #fff;padding: 4px;width: 90%;font-size: 18px;float: left;border-radius: 0 8px 0 0;border: none;}
+#page-admin-tool-lp-competencies .competency-tree li:first-child > ul {width: 100%;float: left;background-color: #f2f2f2;padding: 5px 5px;font-size: 15px;line-height: 18px;border-radius: 0 0 8px 8px;border: none;}
+#page-admin-tool-lp-competencies .competency-tree li:first-child > ul li{width: 100%;float: left;}
+#page-admin-tool-lp-competencies .competency-tree li:first-child > ul li span{background: none;color: initial;padding: 0px;width: initial;font-size: 13px;float: none;border-radius: 0px;}
+#page-admin-tool-lp-competencies .competency-tree li:first-child>ul li > ul > li:before {content: "\f178";font-family: 'Font Awesome 6 Free';     font-weight: 900;color: #777;padding-right: 5px;}
+#page-admin-tool-lp-competencies .competency-tree li:first-child>ul li:first-child > ul > li {padding-left: 16px;}
+#page-admin-tool-lp-competencies div [data-region='managecompetencies'] .row-fluid .span6.card.col-lg-6 .card-block {padding-bottom: 13px;background-color: #f2f2f2;padding-left: 0px;padding-top: 0px;padding-right: 0px;margin-top: 15px;}
+#page-admin-tool-lp-competencies div [data-region='managecompetencies'] .row-fluid .span6.card.col-lg-6 .card-block .card-title {background-color: #20b158;color: #fff;border-radius: 8px 8px 0 0;padding: 10px;margin-bottom: 0;}
+#page-admin-tool-lp-competencies div [data-region='managecompetencies'] .row-fluid .span6.card.col-lg-6 .card-block .card-title h4 {margin-bottom: 0px;}
+#page-admin-tool-lp-competencies div [data-region='managecompetencies'] .row-fluid .span6.card.col-lg-6 .card-block p[data-region=competencyinfo] {padding: 10px;}
+#page-admin-tool-lp-competencies div [data-region='managecompetencies'] .row-fluid .span6.card.col-lg-6 .card-block div[data-region=competencyactions] {padding: 0px 10px;}
+#page-admin-tool-lp-competencies div [data-region='managecompetencies'] .row-fluid .span6.card.col-lg-6 .card-block .card-title span[data-region=competencyactionsmenu] {margin-top: 15px;}

@@ -1,0 +1,58 @@
+{{!
+    This file is part of eAbyas
+    Copyright eAbyas Info Solutons Pvt Ltd, India
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 3 of the License, or
+    (at your option) any later version.
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+    
+    @author eabyas  <info@eabyas.in>
+}}
+<div class='leaderboard_content'>
+    <div class='main_header'>
+        <h3>Leaderboard</h3>
+    </div>
+    <ul class="nav nav-pills nav-fill">
+        <li class="nav-item nav-link active">{{# str }} overall,block_gamification {{/ str}}</a>
+        <li class="nav-item nav-link">{{# str }} weekly,block_gamification {{/ str}}</a>
+        <li class="nav-item nav-link">{{# str }} monthly,block_gamification {{/ str}}</a>
+    </ul>
+    <div class="row flex">
+        <div class="col-md-12 leaderboard_block" id="overall_dashboard">
+            <!-- <div class='header'>
+                <h3>{{# str }} overall,block_gamification {{/ str}}</h3>
+            </div> -->
+            <div class="block_content">
+                {{> block_gamification/block_view }}
+            </div>
+            <a href="{{config.wwwroot}}/blocks/gamification/detailed_leaderboard.php?type=overall" class="view_more_link btn">{{# str}} viewmore,block_gamification {{/ str}}</a>
+        </div>
+        <!-- <div class="col-md-4 leaderboard_block" id="weekly_dashboard">
+            <div class='header'>
+                <h3>{{# str }} weekly,block_gamification {{/ str}}</h3>
+            </div>
+            <div class="block_content">
+                {{{weekly}}}
+            </div>
+            <a href="{{config.wwwroot}}/blocks/gamification/detailed_leaderboard.php?type=weekly" class="view_more_link btn">{{# str}} viewmore,block_gamification {{/ str}}</a>
+        </div>
+        <div class="col-md-4 leaderboard_block" id="monthly_dashboard">
+            <div class='header'>
+                <h3>{{# str }} monthly,block_gamification {{/ str}}</h3>
+            </div>
+            <div class="block_content">
+                {{{monthly}}}
+            </div>
+            <a href="{{config.wwwroot}}/blocks/gamification/detailed_leaderboard.php?type=monthly" class="view_more_link btn">{{# str}} viewmore,block_gamification {{/ str}}</a>
+        </div> -->
+
+        
+    </div>
+
+</div>

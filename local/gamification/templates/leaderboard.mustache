@@ -1,0 +1,61 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+<div class="leaderboard-content">
+    <span class="leaderboard-header">
+        <h3 class="header-text">{{leaderboard_header}}</h3>
+    </span>
+    <div class="fake-block card-text content">
+        <div id="tabs" class="eventstabs">
+        {{# type}}
+            <ul id="gm_leaderboard">  
+            {{# activetabs}}
+                <li class = "leaderboard {{name}}">
+                    
+                    
+                        <a href={{ajax_event_url}}>
+                            <i class="{{icon-class}} lbicon"></i>
+                            <!-- <span class="text-link"> -->
+                                {{head-text}}
+                            <!-- </span> -->
+                        </a>
+                    
+                </li>
+            {{/ activetabs}}
+            </ul>
+
+        {{/ type }}
+        {{^ type }}
+            <ul id="gm_leaderboard">
+                <li class = "leaderboard overall">
+                    <a href={{ajaxlb_course_url}}>
+                        <i class="fa fa-list-ul pr-10 lbicon"></i>
+                        <span class="head-text">{{#str}}overall, local_gamification{{/str}}</span>
+                    </a>
+                </li>
+            </ul>
+        {{/ type }}
+          
+        </div>
+    </div>
+</div>
+{{#js}}
+require(['jquery', 'jqueryui'], function($){
+    $(document).ready(function(){
+        $('#tabs').tabs();
+    });
+});
+{{/js}}

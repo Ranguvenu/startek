@@ -1,0 +1,12 @@
+{
+  "name": "moodle-block_gamification-filters",
+  "builds": {
+    "moodle-block_gamification-filters": {
+      "jsfiles": [
+        "constants.js",
+        "filters.js",
+        "dnd.js"
+      ]
+    }
+  }
+}
